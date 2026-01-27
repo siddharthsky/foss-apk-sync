@@ -1,0 +1,101 @@
+name: Fetch Latest APKs
+
+on:
+  schedule:
+    - cron: "0 3 * * 0"   # Weekly (Sunday)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-apks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup tools
+        run: sudo apt-get install -y jq curl
+
+      - name: Create directories
+        run: |
+          mkdir -p apks
+          mkdir -p version
+
+      # =========================
+      # Metrolist
+      # =========================
+      - name: Check & Fetch Metrolist
+        run: |
+          set -e
+
+          API_URL="https://api.github.com/repos/mostafaalagamy/Metrolist/releases/latest"
+          VERSION_FILE="version/metrolist.version"
+          APK_FILE="apks/metrolist.apk"
+
+          LATEST_VERSION=$(curl -s $API_URL | jq -r '.tag_name')
+          APK_URL=$(curl -s $API_URL | jq -r '.assets[] | select(.name=="app-arm64-with-Google-Cast.apk") | .browser_download_url')
+
+          if [ -z "$APK_URL" ] || [ "$LATEST_VERSION" = "null" ]; then
+            echo "Metrolist release info not found"
+            exit 1
+          fi
+
+          CURRENT_VERSION=""
+          [ -f "$VERSION_FILE" ] && CURRENT_VERSION=$(cat "$VERSION_FILE")
+
+          if [ "$LATEST_VERSION" = "$CURRENT_VERSION" ]; then
+            echo "Metrolist already up-to-date ($LATEST_VERSION)"
+          else
+            echo "Updating Metrolist: $CURRENT_VERSION → $LATEST_VERSION"
+            curl -L "$APK_URL" -o "$APK_FILE"
+            echo "$LATEST_VERSION" > "$VERSION_FILE"
+          fi
+
+      # =========================
+      # Cromite
+      # =========================
+      - name: Check & Fetch Cromite
+        run: |
+          set -e
+
+          API_URL="https://api.github.com/repos/uazo/cromite/releases/latest"
+          VERSION_FILE="version/cromite.version"
+          APK_FILE="apks/cromite.apk"
+
+          LATEST_VERSION=$(curl -s $API_URL | jq -r '.tag_name')
+          APK_URL=$(curl -s $API_URL | jq -r '.assets[] | select(.name=="arm64_ChromePublic.apk") | .browser_download_url')
+
+          if [ -z "$APK_URL" ] || [ "$LATEST_VERSION" = "null" ]; then
+            echo "Cromite release info not found"
+            exit 1
+          fi
+
+          CURRENT_VERSION=""
+          [ -f "$VERSION_FILE" ] && CURRENT_VERSION=$(cat "$VERSION_FILE")
+
+          if [ "$LATEST_VERSION" = "$CURRENT_VERSION" ]; then
+            echo "Cromite already up-to-date ($LATEST_VERSION)"
+          else
+            echo "Updating Cromite: $CURRENT_VERSION → $LATEST_VERSION"
+            curl -L "$APK_URL" -o "$APK_FILE"
+            echo "$LATEST_VERSION" > "$VERSION_FILE"
+          fi
+
+      # =========================
+      # Commit if changed
+      # =========================
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          if git status --porcelain | grep -E "apks/|version/"; then
+            git add apks version
+            git commit -m "chore: update APKs"
+            git push
+          else
+            echo "No updates to commit"
+          fi
