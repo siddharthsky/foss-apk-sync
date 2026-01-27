@@ -56,6 +56,7 @@ jobs:
 
           | App | Version | Download | Last Updated |
           |-----|--------|----------|--------------|
+          | **YT Revanced** | latest | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk) | latest |
           | **Metrolist** | $METRO_VERSION | [Download APK]($METRO_URL) | $DATE |
           | **Cromite** | $CROM_VERSION_SH | [Download APK]($CROM_URL) | $DATE |
 
