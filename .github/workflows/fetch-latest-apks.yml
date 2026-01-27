@@ -35,8 +35,8 @@ jobs:
           METRO_VERSION=$(curl -s $METRO_API | jq -r '.tag_name')
           METRO_URL=$(curl -s $METRO_API | jq -r '.assets[] | select(.name=="app-arm64-with-Google-Cast.apk") | .browser_download_url')
 
-          CROM_VERSION_FULL=$(curl -s $CROM_API | jq -r '.tag_name')
-          CROM_VERSION="${CROM_VERSION_FULL:0:20}"
+          CROM_VERSION=$(curl -s $CROM_API | jq -r '.tag_name')
+          CROM_VERSION_SH="${CROM_VERSION:0:20}"
           CROM_URL=$(curl -s $CROM_API | jq -r '.assets[] | select(.name=="arm64_ChromePublic.apk") | .browser_download_url')
 
           if [ -z "$METRO_URL" ] || [ -z "$CROM_URL" ]; then
@@ -57,7 +57,7 @@ jobs:
           | App | Version | Download | Last Updated |
           |-----|--------|----------|--------------|
           | **Metrolist** | $METRO_VERSION | [Download APK]($METRO_URL) | $DATE |
-          | **Cromite** | $CROM_VERSION | [Download APK]($CROM_URL) | $DATE |
+          | **Cromite** | $CROM_VERSION_SH | [Download APK]($CROM_URL) | $DATE |
 
           ---
           **Source Repos**
