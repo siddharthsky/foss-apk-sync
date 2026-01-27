@@ -31,6 +31,7 @@ jobs:
 
           METRO_API="https://api.github.com/repos/mostafaalagamy/Metrolist/releases/latest"
           CROM_API="https://api.github.com/repos/uazo/cromite/releases/latest"
+          MIX_API="https://github.com/driftywinds/mixplorer-releases/releases"
 
           METRO_VERSION=$(curl -s $METRO_API | jq -r '.tag_name')
           METRO_URL=$(curl -s $METRO_API | jq -r '.assets[] | select(.name=="app-arm64-with-Google-Cast.apk") | .browser_download_url')
@@ -38,6 +39,9 @@ jobs:
           CROM_VERSION=$(curl -s $CROM_API | jq -r '.tag_name')
           CROM_VERSION_SH="${CROM_VERSION:0:20}"
           CROM_URL=$(curl -s $CROM_API | jq -r '.assets[] | select(.name=="arm64_ChromePublic.apk") | .browser_download_url')
+
+          MIX_VERSION=$(curl -s $MIX_API | jq -r '.tag_name')
+          MIX_URL=$(curl -s $METRO_API | jq -r '.assets[] | select(.name=="MiXplorer_$MIX_VERSION.apk") | .browser_download_url')
 
           if [ -z "$METRO_URL" ] || [ -z "$CROM_URL" ]; then
             echo "APK URL not found"
