@@ -1,4 +1,4 @@
-name: Fetch Latest APKs
+name: Fetch Latest APK URLs
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  update-apks:
+  update-readme:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,70 +19,50 @@ jobs:
       - name: Setup tools
         run: sudo apt-get install -y jq curl
 
-      - name: Create directories
-        run: |
-          mkdir -p apks
-          mkdir -p version
+      - name: Create version directory
+        run: mkdir -p version
 
       # =========================
-      # Metrolist
+      # Fetch latest info
       # =========================
-      - name: Check & Fetch Metrolist
+      - name: Fetch release data
         run: |
           set -e
 
-          API_URL="https://api.github.com/repos/mostafaalagamy/Metrolist/releases/latest"
-          VERSION_FILE="version/metrolist.version"
-          APK_FILE="apks/metrolist.apk"
+          METRO_API="https://api.github.com/repos/mostafaalagamy/Metrolist/releases/latest"
+          CROM_API="https://api.github.com/repos/uazo/cromite/releases/latest"
 
-          LATEST_VERSION=$(curl -s $API_URL | jq -r '.tag_name')
-          APK_URL=$(curl -s $API_URL | jq -r '.assets[] | select(.name=="app-arm64-with-Google-Cast.apk") | .browser_download_url')
+          METRO_VERSION=$(curl -s $METRO_API | jq -r '.tag_name')
+          METRO_URL=$(curl -s $METRO_API | jq -r '.assets[] | select(.name=="app-arm64-with-Google-Cast.apk") | .browser_download_url')
 
-          if [ -z "$APK_URL" ] || [ "$LATEST_VERSION" = "null" ]; then
-            echo "Metrolist release info not found"
+          CROM_VERSION=$(curl -s $CROM_API | jq -r '.tag_name')
+          CROM_URL=$(curl -s $CROM_API | jq -r '.assets[] | select(.name=="arm64_ChromePublic.apk") | .browser_download_url')
+
+          if [ -z "$METRO_URL" ] || [ -z "$CROM_URL" ]; then
+            echo "APK URL not found"
             exit 1
           fi
 
-          CURRENT_VERSION=""
-          [ -f "$VERSION_FILE" ] && CURRENT_VERSION=$(cat "$VERSION_FILE")
+          echo "$METRO_VERSION" > version/metrolist.version
+          echo "$CROM_VERSION" > version/cromite.version
 
-          if [ "$LATEST_VERSION" = "$CURRENT_VERSION" ]; then
-            echo "Metrolist already up-to-date ($LATEST_VERSION)"
-          else
-            echo "Updating Metrolist: $CURRENT_VERSION → $LATEST_VERSION"
-            curl -L "$APK_URL" -o "$APK_FILE"
-            echo "$LATEST_VERSION" > "$VERSION_FILE"
-          fi
+          DATE=$(date -u +"%Y-%m-%d")
 
-      # =========================
-      # Cromite
-      # =========================
-      - name: Check & Fetch Cromite
-        run: |
-          set -e
+          cat > README.md <<EOF
+          # 📦 FOSS APK Sync
 
-          API_URL="https://api.github.com/repos/uazo/cromite/releases/latest"
-          VERSION_FILE="version/cromite.version"
-          APK_FILE="apks/cromite.apk"
+          Auto-updated weekly via GitHub Actions.
 
-          LATEST_VERSION=$(curl -s $API_URL | jq -r '.tag_name')
-          APK_URL=$(curl -s $API_URL | jq -r '.assets[] | select(.name=="arm64_ChromePublic.apk") | .browser_download_url')
+          | App | Version | Download | Last Updated |
+          |-----|--------|----------|--------------|
+          | **Metrolist** | $METRO_VERSION | [Download APK]($METRO_URL) | $DATE |
+          | **Cromite** | $CROM_VERSION | [Download APK]($CROM_URL) | $DATE |
 
-          if [ -z "$APK_URL" ] || [ "$LATEST_VERSION" = "null" ]; then
-            echo "Cromite release info not found"
-            exit 1
-          fi
-
-          CURRENT_VERSION=""
-          [ -f "$VERSION_FILE" ] && CURRENT_VERSION=$(cat "$VERSION_FILE")
-
-          if [ "$LATEST_VERSION" = "$CURRENT_VERSION" ]; then
-            echo "Cromite already up-to-date ($LATEST_VERSION)"
-          else
-            echo "Updating Cromite: $CURRENT_VERSION → $LATEST_VERSION"
-            curl -L "$APK_URL" -o "$APK_FILE"
-            echo "$LATEST_VERSION" > "$VERSION_FILE"
-          fi
+          ---
+          **Source Repos**
+          - https://github.com/mostafaalagamy/Metrolist
+          - https://github.com/uazo/cromite
+          EOF
 
       # =========================
       # Commit if changed
@@ -92,9 +72,9 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          if git status --porcelain | grep -E "apks/|version/"; then
-            git add apks version
-            git commit -m "chore: update APKs"
+          if git status --porcelain | grep -E "README.md|version/"; then
+            git add README.md version
+            git commit -m "chore: update latest APK URLs"
             git push
           else
             echo "No updates to commit"
