@@ -50,6 +50,7 @@ jobs:
 
           echo "$METRO_VERSION" > version/metrolist.version
           echo "$CROM_VERSION" > version/cromite.version
+          echo "$MIX_VERSION" > version/mixplorer.version
 
           DATE=$(date -u +"%Y-%m-%d")
 
@@ -63,11 +64,14 @@ jobs:
           | **YT Revanced** | latest | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk) | latest |
           | **Metrolist** | $METRO_VERSION | [Download APK]($METRO_URL) | $DATE |
           | **Cromite** | $CROM_VERSION_SH | [Download APK]($CROM_URL) | $DATE |
+          | **Mixplorer** | $MIX_VERSION | [Download APK]($MIX_URL) | $DATE |
 
           ---
           **Source Repos**
+          - https://github.com/FiorenMas
           - https://github.com/mostafaalagamy/Metrolist
           - https://github.com/uazo/cromite
+          - https://github.com/driftywinds/mixplorer-releases
           EOF
 
       # =========================
