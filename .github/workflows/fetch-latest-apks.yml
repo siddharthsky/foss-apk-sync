@@ -23,7 +23,7 @@ jobs:
         run: mkdir -p version
 
       # =========================
-      # Fetch latest info
+      # Fetch latest APK info
       # =========================
       - name: Fetch release data
         env:
@@ -31,44 +31,45 @@ jobs:
         run: |
           set -euo pipefail
 
-          METRO_API="https://api.github.com/repos/mostafaalagamy/Metrolist/releases/latest"
-          CROM_API="https://api.github.com/repos/uazo/cromite/releases/latest"
-          MIX_API="https://api.github.com/repos/driftywinds/mixplorer-releases/releases/latest"
-          STUBE_API="https://api.github.com/repos/yuliskov/SmartTube/releases/latest"
-
           auth_header="Authorization: Bearer $GH_TOKEN"
-
-          METRO_JSON=$(curl -sH "$auth_header" "$METRO_API")
-          CROM_JSON=$(curl -sH "$auth_header" "$CROM_API")
-          MIX_JSON=$(curl -sH "$auth_header" "$MIX_API")
-          STUBE_JSON=$(curl -sH "$auth_header" "$STUBE_API")
-
-          METRO_VERSION=$(jq -r '.tag_name' <<< "$METRO_JSON")
-          METRO_URL=$(jq -r '.assets[] | select(.name=="app-arm64-with-Google-Cast.apk") | .browser_download_url' <<< "$METRO_JSON")
-
-          CROM_VERSION=$(jq -r '.tag_name' <<< "$CROM_JSON")
-          CROM_VERSION_SH="${CROM_VERSION:0:20}"
-          CROM_URL=$(jq -r '.assets[] | select(.name=="arm64_ChromePublic.apk") | .browser_download_url' <<< "$CROM_JSON")
-
-          MIX_VERSION=$(jq -r '.tag_name' <<< "$MIX_JSON")
-          MIX_URL=$(jq -r '.assets[] | select(.name | test("MiXplorer.*\\.apk")) | .browser_download_url' <<< "$MIX_JSON")
-
-          STUBE_VERSION=$(jq -r '.tag_name' <<< "$STUBE_JSON")
-          STUBE_URL=$(jq -r '.assets[] | select(.name | test("SmartTube_stable_*\\_arm64-v8a.apk")) | .browser_download_url' <<< "$STUBE_JSON")
-
-
-          if [[ -z "$METRO_URL" || -z "$CROM_URL" || -z "$MIX_URL" ]]; then
-            echo "❌ One or more APK URLs not found"
-            exit 1
-          fi
-
-          echo "$METRO_VERSION" > version/metrolist.version
-          echo "$CROM_VERSION" > version/cromite.version
-          echo "$MIX_VERSION" > version/mixplorer.version
-          echo "$STUBE_VERSION" > version/stube.version
-
           DATE=$(date -u +"%Y-%m-%d")
+          ROWS=""
 
+          # ==================================================
+          # APP CONFIG (add new apps here – ONE LINE EACH)
+          # Name | owner/repo | asset-regex | version-file | shorten-version
+          # ==================================================
+          APPS=(
+            "Metrolist|mostafaalagamy/Metrolist|app-arm64-with-Google-Cast.apk|metrolist.version|false"
+            "Cromite|uazo/cromite|arm64_ChromePublic.apk|cromite.version|true"
+            "MiXplorer|driftywinds/mixplorer-releases|MiXplorer.*\\.apk|mixplorer.version|false"
+            "STube|yuliskov/SmartTube|SmartTube_stable_.*_arm64-v8a.apk|stube.version|false"
+          )
+
+          for APP in "${APPS[@]}"; do
+            IFS="|" read -r NAME REPO ASSET VERSION_FILE SHORTEN <<< "$APP"
+
+            API="https://api.github.com/repos/$REPO/releases/latest"
+            JSON=$(curl -sH "$auth_header" "$API")
+
+            VERSION=$(jq -r '.tag_name' <<< "$JSON")
+            URL=$(jq -r ".assets[] | select(.name | test(\"$ASSET\")) | .browser_download_url" <<< "$JSON")
+
+            if [[ -z "$URL" ]]; then
+              echo "❌ APK not found for $NAME"
+              exit 1
+            fi
+
+            [[ "$SHORTEN" == "true" ]] && VERSION="${VERSION:0:20}"
+
+            echo "$VERSION" > "version/$VERSION_FILE"
+
+            ROWS+="| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |\n"
+          done
+
+          # =========================
+          # Generate README
+          # =========================
           cat > README.md <<EOF
           # 📦 FOSS APK Sync
 
@@ -77,11 +78,7 @@ jobs:
           | App | Version | Download | Last Updated |
           |-----|--------|----------|--------------|
           | **YT Revanced** | latest | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk) | latest |
-          | **Metrolist** | $METRO_VERSION | [Download APK]($METRO_URL) | $DATE |
-          | **Cromite** | $CROM_VERSION_SH | [Download APK]($CROM_URL) | $DATE |
-          | **MiXplorer** | $MIX_VERSION | [Download APK]($MIX_URL) | $DATE |
-          | **STube** | $STUBE_VERSION | [Download APK]($STUBE_URL) | $DATE |
-
+          $ROWS
           ---
           **Source Repos**
           - https://github.com/FiorenMas
