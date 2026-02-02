@@ -22,11 +22,27 @@
     "asset_regex": "MiXplorer.*\\.apk"
   },
   {
-    "name": "SmartTube",
+    "name": "SmartTube arm",
+    "version_file": "stube.version",
+    "type": "github",
+    "repo": "yuliskov/SmartTube",
+    "asset_regex": "SmartTube_stable_.*_armeabi-v7a.apk"
+  },
+  {
+    "name": "SmartTube arm64",
     "version_file": "stube.version",
     "type": "github",
     "repo": "yuliskov/SmartTube",
     "asset_regex": "SmartTube_stable_.*_arm64-v8a.apk"
+  },
+  {
+  "name": "SmartTube Beta",
+  "type": "github",
+  "repo": "yuliskov/SmartTube",
+  "version_file": "stube_beta.version",
+  "tag": "30.75",
+  "asset_regex": "SmartTube_beta_.*_arm64-v8a.apk", 
+  "version_trim": 10
   },
   {
     "name": "YT Revanced",
