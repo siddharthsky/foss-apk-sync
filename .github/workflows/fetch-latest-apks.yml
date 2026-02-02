@@ -49,10 +49,18 @@ jobs:
             else
               REPO=$(jq -r '.repo' <<< "$app")
               VERSION_FILE=$(jq -r '.version_file' <<< "$app")
-              API="https://api.github.com/repos/$REPO/releases/latest"
-
+              
+              TAG=$(jq -r '.tag // empty' <<< "$app")
+              
+              if [[ -n "$TAG" ]]; then
+                API="https://api.github.com/repos/$REPO/releases/tags/$TAG"
+              else
+                API="https://api.github.com/repos/$REPO/releases/latest"
+              fi
+              
               JSON=$(curl -sH "$AUTH" "$API")
               VERSION=$(jq -r '.tag_name' <<< "$JSON")
+
 
               if jq -e '.version_trim' <<< "$app" >/dev/null; then
                 TRIM=$(jq -r '.version_trim' <<< "$app")
