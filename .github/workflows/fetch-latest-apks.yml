@@ -1,50 +1,92 @@
-- name: Fetch apps from config
-  env:
-    GH_TOKEN: ${{ github.token }}
-  run: |
-    set -euo pipefail
-    mkdir -p version
+name: Fetch Latest APK URLs
 
-    DATE=$(date -u +"%Y-%m-%d")
-    auth="Authorization: Bearer $GH_TOKEN"
+on:
+  schedule:
+    - cron: "0 3 * * 0"   # Weekly (Sunday)
+  workflow_dispatch:
 
-    echo "# 📦 FOSS APK Sync" > README.md
-    echo "" >> README.md
-    echo "Auto-updated weekly via GitHub Actions." >> README.md
-    echo "" >> README.md
-    echo "| App | Version | Download | Last Updated |" >> README.md
-    echo "|-----|--------|----------|--------------|" >> README.md
+permissions:
+  contents: write
 
-    jq -c '.[]' apps.json | while read -r app; do
-      NAME=$(jq -r '.name' <<< "$app")
-      TYPE=$(jq -r '.type' <<< "$app")
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
 
-      if [[ "$TYPE" == "static" ]]; then
-        VERSION=$(jq -r '.version' <<< "$app")
-        URL=$(jq -r '.url' <<< "$app")
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      else
-        REPO=$(jq -r '.repo' <<< "$app")
-        VERSION_FILE=$(jq -r '.version_file' <<< "$app")
-        API="https://api.github.com/repos/$REPO/releases/latest"
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y jq curl
 
-        JSON=$(curl -sH "$auth" "$API")
-        VERSION=$(jq -r '.tag_name' <<< "$JSON")
+      - name: Prepare folders
+        run: mkdir -p version
 
-        if jq -e '.version_trim' <<< "$app" >/dev/null; then
-          TRIM=$(jq -r '.version_trim' <<< "$app")
-          VERSION="${VERSION:0:$TRIM}"
-        fi
+      - name: Fetch apps from apps.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
 
-        if jq -e '.asset_name' <<< "$app" >/dev/null; then
-          URL=$(jq -r '.assets[] | select(.name=="'"$(jq -r '.asset_name' <<< "$app")"'") | .browser_download_url' <<< "$JSON")
-        else
-          REGEX=$(jq -r '.asset_regex' <<< "$app")
-          URL=$(jq -r '.assets[] | select(.name | test("'"$REGEX"'")) | .browser_download_url' <<< "$JSON")
-        fi
+          DATE=$(date -u +"%Y-%m-%d")
+          AUTH="Authorization: Bearer $GH_TOKEN"
 
-        echo "$VERSION" > "version/$VERSION_FILE"
-      fi
+          echo "# 📦 FOSS APK Sync" > README.md
+          echo "" >> README.md
+          echo "Auto-updated weekly via GitHub Actions." >> README.md
+          echo "" >> README.md
+          echo "| App | Version | Download | Last Updated |" >> README.md
+          echo "|-----|--------|----------|--------------|" >> README.md
 
-      echo "| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |" >> README.md
-    done
+          jq -c '.[]' apps.json | while read -r app; do
+            NAME=$(jq -r '.name' <<< "$app")
+            TYPE=$(jq -r '.type' <<< "$app")
+
+            if [[ "$TYPE" == "static" ]]; then
+              VERSION=$(jq -r '.version' <<< "$app")
+              URL=$(jq -r '.url' <<< "$app")
+
+            else
+              REPO=$(jq -r '.repo' <<< "$app")
+              VERSION_FILE=$(jq -r '.version_file' <<< "$app")
+              API="https://api.github.com/repos/$REPO/releases/latest"
+
+              JSON=$(curl -sH "$AUTH" "$API")
+              VERSION=$(jq -r '.tag_name' <<< "$JSON")
+
+              if jq -e '.version_trim' <<< "$app" >/dev/null; then
+                TRIM=$(jq -r '.version_trim' <<< "$app")
+                VERSION="${VERSION:0:$TRIM}"
+              fi
+
+              if jq -e '.asset_name' <<< "$app" >/dev/null; then
+                ASSET=$(jq -r '.asset_name' <<< "$app")
+                URL=$(jq -r '.assets[] | select(.name=="'"$ASSET"'") | .browser_download_url' <<< "$JSON")
+              else
+                REGEX=$(jq -r '.asset_regex' <<< "$app")
+                URL=$(jq -r '.assets[] | select(.name | test("'"$REGEX"'")) | .browser_download_url' <<< "$JSON")
+              fi
+
+              echo "$VERSION" > "version/$VERSION_FILE"
+            fi
+
+            if [[ -z "${URL:-}" ]]; then
+              echo "❌ APK not found for $NAME"
+              exit 1
+            fi
+
+            echo "| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |" >> README.md
+          done
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          if git status --porcelain | grep -E "README.md|version/"; then
+            git add README.md version apps.json
+            git commit -m "chore: update APK versions"
+            git push
+          else
+            echo "No changes to commit"
+          fi
