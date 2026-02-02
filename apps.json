@@ -7,6 +7,13 @@
     "asset_name": "app-arm64-with-Google-Cast.apk"
   },
   {
+    "name": "Metrolist",
+    "version_file": "metrolist.version",
+    "type": "github",
+    "repo": "mostafaalagamy/Metrolist",
+    "asset_name": "app-arm64-release.apk"
+  },
+  {
     "name": "Cromite",
     "version_file": "cromite.version",
     "type": "github",
