@@ -1,110 +1,50 @@
-name: Fetch Latest APK URLs
+- name: Fetch apps from config
+  env:
+    GH_TOKEN: ${{ github.token }}
+  run: |
+    set -euo pipefail
+    mkdir -p version
 
-on:
-  schedule:
-    - cron: "0 3 * * 0"   # Weekly (Sunday)
-  workflow_dispatch:
+    DATE=$(date -u +"%Y-%m-%d")
+    auth="Authorization: Bearer $GH_TOKEN"
 
-permissions:
-  contents: write
+    echo "# 📦 FOSS APK Sync" > README.md
+    echo "" >> README.md
+    echo "Auto-updated weekly via GitHub Actions." >> README.md
+    echo "" >> README.md
+    echo "| App | Version | Download | Last Updated |" >> README.md
+    echo "|-----|--------|----------|--------------|" >> README.md
 
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
+    jq -c '.[]' apps.json | while read -r app; do
+      NAME=$(jq -r '.name' <<< "$app")
+      TYPE=$(jq -r '.type' <<< "$app")
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      if [[ "$TYPE" == "static" ]]; then
+        VERSION=$(jq -r '.version' <<< "$app")
+        URL=$(jq -r '.url' <<< "$app")
 
-      - name: Setup tools
-        run: sudo apt-get update && sudo apt-get install -y jq curl
+      else
+        REPO=$(jq -r '.repo' <<< "$app")
+        VERSION_FILE=$(jq -r '.version_file' <<< "$app")
+        API="https://api.github.com/repos/$REPO/releases/latest"
 
-      - name: Create version directory
-        run: mkdir -p version
+        JSON=$(curl -sH "$auth" "$API")
+        VERSION=$(jq -r '.tag_name' <<< "$JSON")
 
-      # =========================
-      # Fetch latest APK info
-      # =========================
-      - name: Fetch release data
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
+        if jq -e '.version_trim' <<< "$app" >/dev/null; then
+          TRIM=$(jq -r '.version_trim' <<< "$app")
+          VERSION="${VERSION:0:$TRIM}"
+        fi
 
-          auth_header="Authorization: Bearer $GH_TOKEN"
-          DATE=$(date -u +"%Y-%m-%d")
-          ROWS=""
+        if jq -e '.asset_name' <<< "$app" >/dev/null; then
+          URL=$(jq -r '.assets[] | select(.name=="'"$(jq -r '.asset_name' <<< "$app")"'") | .browser_download_url' <<< "$JSON")
+        else
+          REGEX=$(jq -r '.asset_regex' <<< "$app")
+          URL=$(jq -r '.assets[] | select(.name | test("'"$REGEX"'")) | .browser_download_url' <<< "$JSON")
+        fi
 
-          # ==================================================
-          # APP CONFIG (add new apps here – ONE LINE EACH)
-          # Name | owner/repo | asset-regex | version-file | shorten-version
-          # ==================================================
-          APPS=(
-            "Metrolist|mostafaalagamy/Metrolist|app-arm64-with-Google-Cast.apk|metrolist.version|false"
-            "Cromite|uazo/cromite|arm64_ChromePublic.apk|cromite.version|true"
-            "MiXplorer|driftywinds/mixplorer-releases|MiXplorer.*\\.apk|mixplorer.version|false"
-            "STube|yuliskov/SmartTube|SmartTube_stable_.*_arm64-v8a.apk|stube.version|false"
-          )
+        echo "$VERSION" > "version/$VERSION_FILE"
+      fi
 
-          for APP in "${APPS[@]}"; do
-            IFS="|" read -r NAME REPO ASSET VERSION_FILE SHORTEN <<< "$APP"
-
-            API="https://api.github.com/repos/$REPO/releases/latest"
-            JSON=$(curl -sH "$auth_header" "$API")
-
-            VERSION=$(jq -r '.tag_name' <<< "$JSON")
-            URL=$(jq -r --arg pattern "$ASSET" '
-              .assets[]
-              | select(.name | test($pattern))
-              | .browser_download_url
-            ' <<< "$JSON")
-
-            
-            if [[ -z "$URL" ]]; then
-              echo "❌ APK not found for $NAME"
-              exit 1
-            fi
-
-            [[ "$SHORTEN" == "true" ]] && VERSION="${VERSION:0:20}"
-
-            echo "$VERSION" > "version/$VERSION_FILE"
-
-            ROWS+="| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |\n"
-          done
-
-          # =========================
-          # Generate README
-          # =========================
-          cat > README.md <<EOF
-          # 📦 FOSS APK Sync
-
-          Auto-updated weekly via GitHub Actions.
-
-          | App | Version | Download | Last Updated |
-          |-----|--------|----------|--------------|
-          | **YT Revanced** | latest | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk) | latest |
-          $ROWS
-          ---
-          **Source Repos**
-          - https://github.com/FiorenMas
-          - https://github.com/mostafaalagamy/Metrolist
-          - https://github.com/uazo/cromite
-          - https://github.com/driftywinds/mixplorer-releases
-          - https://github.com/yuliskov/SmartTube
-          EOF
-
-      # =========================
-      # Commit if changed
-      # =========================
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-          if git status --porcelain | grep -E "README.md|version/"; then
-            git add README.md version
-            git commit -m "chore: update latest APK URLs"
-            git push
-          else
-            echo "No updates to commit"
-          fi
+      echo "| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |" >> README.md
+    done
