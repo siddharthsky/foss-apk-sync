@@ -1,7 +1,5 @@
 # 📦 FOSS APK Sync
 
-Auto-updated weekly via GitHub Actions.
-
 | App | Version | Download | Last Updated |
 |-----|--------|----------|--------------|
 | **Metrolist /w Cast** | v12.12.4 | [Download APK](https://github.com/mostafaalagamy/Metrolist/releases/download/v12.12.4/app-arm64-with-Google-Cast.apk) | 2026-02-02 |
