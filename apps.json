@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Metrolist",
+    "version_file": "metrolist.version",
+    "type": "github",
+    "repo": "mostafaalagamy/Metrolist",
+    "asset_name": "app-arm64-with-Google-Cast.apk"
+  },
+  {
+    "name": "Cromite",
+    "version_file": "cromite.version",
+    "type": "github",
+    "repo": "uazo/cromite",
+    "asset_name": "arm64_ChromePublic.apk",
+    "version_trim": 20
+  },
+  {
+    "name": "MiXplorer",
+    "version_file": "mixplorer.version",
+    "type": "github",
+    "repo": "driftywinds/mixplorer-releases",
+    "asset_regex": "MiXplorer.*\\.apk"
+  },
+  {
+    "name": "SmartTube",
+    "version_file": "stube.version",
+    "type": "github",
+    "repo": "yuliskov/SmartTube",
+    "asset_regex": "SmartTube_stable_.*_arm64-v8a.apk"
+  },
+  {
+    "name": "YT Revanced",
+    "type": "static",
+    "version": "latest",
+    "url": "https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk"
+  }
+]
