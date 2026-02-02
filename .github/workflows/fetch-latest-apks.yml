@@ -64,7 +64,12 @@ jobs:
                 URL=$(jq -r '.assets[] | select(.name=="'"$ASSET"'") | .browser_download_url' <<< "$JSON")
               else
                 REGEX=$(jq -r '.asset_regex' <<< "$app")
-                URL=$(jq -r '.assets[] | select(.name | test("'"$REGEX"'")) | .browser_download_url' <<< "$JSON")
+                URL=$(jq -r --arg re "$REGEX" '
+                  .assets[]
+                  | select(.name | test($re))
+                  | .browser_download_url
+                ' <<< "$JSON")
+
               fi
 
               echo "$VERSION" > "version/$VERSION_FILE"
