@@ -53,8 +53,13 @@ jobs:
             JSON=$(curl -sH "$auth_header" "$API")
 
             VERSION=$(jq -r '.tag_name' <<< "$JSON")
-            URL=$(jq -r ".assets[] | select(.name | test(\"$ASSET\")) | .browser_download_url" <<< "$JSON")
+            URL=$(jq -r --arg pattern "$ASSET" '
+              .assets[]
+              | select(.name | test($pattern))
+              | .browser_download_url
+            ' <<< "$JSON")
 
+            
             if [[ -z "$URL" ]]; then
               echo "❌ APK not found for $NAME"
               exit 1
