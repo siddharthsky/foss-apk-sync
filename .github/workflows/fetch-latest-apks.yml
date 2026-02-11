@@ -41,11 +41,15 @@ jobs:
             echo "|-----|--------|----------|--------------|"
           } > README.md
 
-          jq -c '.[]' apps.json | while read -r app; do
+          # IMPORTANT: no pipe → avoids subshell
+          while read -r app; do
             NAME=$(jq -r '.name' <<< "$app")
             TYPE=$(jq -r '.type' <<< "$app")
 
             echo "➡️ Processing $NAME"
+
+            URL=""
+            VERSION=""
 
             if [[ "$TYPE" == "static" ]]; then
               VERSION=$(jq -r '.version' <<< "$app")
@@ -95,15 +99,16 @@ jobs:
               echo "$VERSION" > "version/$VERSION_FILE"
             fi
 
-            if [[ -z "${URL:-}" ]]; then
+            if [[ -z "$URL" ]]; then
               echo "❌ APK not found for $NAME — skipping"
               continue
             fi
 
             echo "| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |" >> README.md
-          done
 
-          # ---- SOURCES SECTION ----
+          done < <(jq -c '.[]' apps.json)
+
+          # -------- SOURCES --------
 
           echo "" >> README.md
           echo "## 🔗 Sources" >> README.md
@@ -113,6 +118,7 @@ jobs:
             | while read -r src; do
                 echo "- $src" >> README.md
               done
+
 
       - name: Commit and push if changed
         run: |
