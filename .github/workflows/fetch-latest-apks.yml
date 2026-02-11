@@ -30,6 +30,7 @@ jobs:
 
           DATE=$(date -u +"%Y-%m-%d")
           AUTH="Authorization: Bearer $GH_TOKEN"
+          SOURCES=()
 
           {
             echo "# 📦 FOSS APK Sync"
@@ -49,11 +50,14 @@ jobs:
             if [[ "$TYPE" == "static" ]]; then
               VERSION=$(jq -r '.version' <<< "$app")
               URL=$(jq -r '.url' <<< "$app")
+              SOURCES+=("$URL")
 
             else
               REPO=$(jq -r '.repo' <<< "$app")
               VERSION_FILE=$(jq -r '.version_file' <<< "$app")
               TAG=$(jq -r '.tag // empty' <<< "$app")
+
+              SOURCES+=("https://github.com/$REPO")
 
               if [[ -n "$TAG" ]]; then
                 API="https://api.github.com/repos/$REPO/releases/tags/$TAG"
@@ -63,15 +67,11 @@ jobs:
 
               JSON=$(curl -sfH "$AUTH" "$API" || echo '{}')
 
-              # fallback to latest if tag failed
               if jq -e '.message?' <<< "$JSON" >/dev/null; then
-                echo "⚠️ Tag not found for $NAME — falling back to latest"
                 JSON=$(curl -sfH "$AUTH" "https://api.github.com/repos/$REPO/releases/latest" || echo '{}')
               fi
 
-              VERSION=$(jq -r '.tag_name // empty' <<< "$JSON")
-
-              [[ -z "$VERSION" ]] && VERSION="unknown"
+              VERSION=$(jq -r '.tag_name // "unknown"' <<< "$JSON")
 
               if jq -e '.version_trim?' <<< "$app" >/dev/null; then
                 TRIM=$(jq -r '.version_trim' <<< "$app")
@@ -83,16 +83,12 @@ jobs:
               if jq -e '.asset_name?' <<< "$app" >/dev/null; then
                 ASSET=$(jq -r '.asset_name' <<< "$app")
                 URL=$(jq -r --arg a "$ASSET" '
-                  .[]
-                  | select(.name==$a)
-                  | .browser_download_url
+                  .[] | select(.name==$a) | .browser_download_url
                 ' <<< "$ASSETS")
               else
                 REGEX=$(jq -r '.asset_regex' <<< "$app")
                 URL=$(jq -r --arg re "$REGEX" '
-                  .[]
-                  | select(.name | test($re))
-                  | .browser_download_url
+                  .[] | select(.name | test($re)) | .browser_download_url
                 ' <<< "$ASSETS")
               fi
 
@@ -106,6 +102,17 @@ jobs:
 
             echo "| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |" >> README.md
           done
+
+          # ---- SOURCES SECTION ----
+
+          echo "" >> README.md
+          echo "## 🔗 Sources" >> README.md
+
+          printf "%s\n" "${SOURCES[@]}" \
+            | sort -u \
+            | while read -r src; do
+                echo "- $src" >> README.md
+              done
 
       - name: Commit and push if changed
         run: |
