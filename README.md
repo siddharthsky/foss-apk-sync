@@ -12,4 +12,8 @@ Auto-updated weekly via GitHub Actions.
 | **YT Revanced** | latest | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk) | 2026-02-11 |
 
 ## 🔗 Sources
-- 
+- https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk
+- https://github.com/driftywinds/mixplorer-releases
+- https://github.com/mostafaalagamy/Metrolist
+- https://github.com/uazo/cromite
+- https://github.com/yuliskov/SmartTube
