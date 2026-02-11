@@ -97,12 +97,14 @@ jobs:
           echo "" >> README.md
           
           jq -r '
-            .[]
-            | if .type=="static"
-              then "- \(.name) — \(.source // .url)"
-              else "- \(.name) — https://github.com/\(.repo)"
+            .[]?
+            | if .type=="static" then
+                "- \(.name) — \(.source // .url // "unknown")"
+              else
+                "- \(.name) — https://github.com/\(.repo // "missing-repo")"
               end
           ' apps.json >> README.md
+
 
 
       - name: Commit and push if changed
