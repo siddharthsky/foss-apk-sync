@@ -31,16 +31,20 @@ jobs:
           DATE=$(date -u +"%Y-%m-%d")
           AUTH="Authorization: Bearer $GH_TOKEN"
 
-          echo "# 📦 FOSS APK Sync" > README.md
-          echo "" >> README.md
-          echo "Auto-updated weekly via GitHub Actions." >> README.md
-          echo "" >> README.md
-          echo "| App | Version | Download | Last Updated |" >> README.md
-          echo "|-----|--------|----------|--------------|" >> README.md
+          {
+            echo "# 📦 FOSS APK Sync"
+            echo ""
+            echo "Auto-updated weekly via GitHub Actions."
+            echo ""
+            echo "| App | Version | Download | Last Updated |"
+            echo "|-----|--------|----------|--------------|"
+          } > README.md
 
           jq -c '.[]' apps.json | while read -r app; do
             NAME=$(jq -r '.name' <<< "$app")
             TYPE=$(jq -r '.type' <<< "$app")
+
+            echo "➡️ Processing $NAME"
 
             if [[ "$TYPE" == "static" ]]; then
               VERSION=$(jq -r '.version' <<< "$app")
@@ -49,43 +53,55 @@ jobs:
             else
               REPO=$(jq -r '.repo' <<< "$app")
               VERSION_FILE=$(jq -r '.version_file' <<< "$app")
-              
               TAG=$(jq -r '.tag // empty' <<< "$app")
-              
+
               if [[ -n "$TAG" ]]; then
                 API="https://api.github.com/repos/$REPO/releases/tags/$TAG"
               else
                 API="https://api.github.com/repos/$REPO/releases/latest"
               fi
-              
-              JSON=$(curl -sH "$AUTH" "$API")
-              VERSION=$(jq -r '.tag_name' <<< "$JSON")
 
+              JSON=$(curl -sfH "$AUTH" "$API" || echo '{}')
 
-              if jq -e '.version_trim' <<< "$app" >/dev/null; then
+              # fallback to latest if tag failed
+              if jq -e '.message?' <<< "$JSON" >/dev/null; then
+                echo "⚠️ Tag not found for $NAME — falling back to latest"
+                JSON=$(curl -sfH "$AUTH" "https://api.github.com/repos/$REPO/releases/latest" || echo '{}')
+              fi
+
+              VERSION=$(jq -r '.tag_name // empty' <<< "$JSON")
+
+              [[ -z "$VERSION" ]] && VERSION="unknown"
+
+              if jq -e '.version_trim?' <<< "$app" >/dev/null; then
                 TRIM=$(jq -r '.version_trim' <<< "$app")
                 VERSION="${VERSION:0:$TRIM}"
               fi
 
-              if jq -e '.asset_name' <<< "$app" >/dev/null; then
+              ASSETS=$(jq '.assets // []' <<< "$JSON")
+
+              if jq -e '.asset_name?' <<< "$app" >/dev/null; then
                 ASSET=$(jq -r '.asset_name' <<< "$app")
-                URL=$(jq -r '.assets[] | select(.name=="'"$ASSET"'") | .browser_download_url' <<< "$JSON")
+                URL=$(jq -r --arg a "$ASSET" '
+                  .[]
+                  | select(.name==$a)
+                  | .browser_download_url
+                ' <<< "$ASSETS")
               else
                 REGEX=$(jq -r '.asset_regex' <<< "$app")
                 URL=$(jq -r --arg re "$REGEX" '
-                  .assets[]
+                  .[]
                   | select(.name | test($re))
                   | .browser_download_url
-                ' <<< "$JSON")
-
+                ' <<< "$ASSETS")
               fi
 
               echo "$VERSION" > "version/$VERSION_FILE"
             fi
 
             if [[ -z "${URL:-}" ]]; then
-              echo "❌ APK not found for $NAME"
-              exit 1
+              echo "❌ APK not found for $NAME — skipping"
+              continue
             fi
 
             echo "| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |" >> README.md
