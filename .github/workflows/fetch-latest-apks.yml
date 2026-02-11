@@ -2,8 +2,7 @@ name: Fetch Latest APK URLs
 
 on:
   schedule:
-    - cron: "0 0 * * *" 
-
+    - cron: "0 3 * * 0"   # Weekly (Sunday)
   workflow_dispatch:
 
 permissions:
@@ -91,21 +90,6 @@ jobs:
 
             echo "| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |" >> README.md
           done
-
-          echo "" >> README.md
-          echo "## 🔗 Repositories / Sources" >> README.md
-          echo "" >> README.md
-          
-          jq -r '
-            .[]?
-            | if .type=="static" then
-                "- \(.name) — \(.source // .url // "unknown")"
-              else
-                "- \(.name) — https://github.com/\(.repo // "missing-repo")"
-              end
-          ' apps.json >> README.md
-
-
 
       - name: Commit and push if changed
         run: |
