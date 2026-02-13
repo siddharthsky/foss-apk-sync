@@ -3,14 +3,14 @@
     "name": "Metrolist /w Cast",
     "version_file": "metrolist.version",
     "type": "github",
-    "repo": "mostafaalagamy/Metrolist",
+    "repo": "MetrolistGroup/Metrolist",
     "asset_name": "app-arm64-with-Google-Cast.apk"
   },
   {
     "name": "Metrolist",
     "version_file": "metrolist.version",
     "type": "github",
-    "repo": "mostafaalagamy/Metrolist",
+    "repo": "MetrolistGroup/Metrolist",
     "asset_name": "app-arm64-release.apk"
   },
   {
