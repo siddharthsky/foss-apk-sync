@@ -11,7 +11,7 @@ Auto-updated weekly via GitHub Actions.
 | **SmartTube arm** | 30.90s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/30.90s/SmartTube_stable_30.90_armeabi-v7a.apk) | 2026-02-26 |
 | **SmartTube arm64** | 30.90s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/30.90s/SmartTube_stable_30.90_arm64-v8a.apk) | 2026-02-26 |
 | **SmartTube Beta** | 30.75 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/30.75/SmartTube_beta_30.75_arm64-v8a.apk) | 2026-02-26 |
-| **YT Revanced** | latest | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced_two2.apk) | 2026-02-26 |
+| **YT Revanced** | latest | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced_two2.apk) | 2026-02-22 |
 
 ## 🔗 Sources
 - https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced_two2.apk
