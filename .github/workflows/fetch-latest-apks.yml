@@ -2,7 +2,7 @@ name: Fetch Latest APK URLs
 
 on:
   schedule:
-    - cron: "0 0 * * *"   
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -20,7 +20,9 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y jq curl
 
       - name: Prepare folders
-        run: mkdir -p version
+        run: |
+          mkdir -p version
+          cp README.md README.old.md 2>/dev/null || true
 
       - name: Fetch apps from apps.json
         env:
@@ -41,7 +43,6 @@ jobs:
             echo "|-----|--------|----------|--------------|"
           } > README.md
 
-          # IMPORTANT: no pipe → avoids subshell
           while read -r app; do
             NAME=$(jq -r '.name' <<< "$app")
             TYPE=$(jq -r '.type' <<< "$app")
@@ -104,7 +105,19 @@ jobs:
               continue
             fi
 
-            echo "| **$NAME** | $VERSION | [Download APK]($URL) | $DATE |" >> README.md
+            # Get previous URL and date from old README
+            OLD_LINE=$(grep -F "| **$NAME** |" README.old.md 2>/dev/null || true)
+            OLD_URL=$(echo "$OLD_LINE" | sed -n 's/.*(\(http[^)]*\)).*/\1/p')
+            OLD_DATE=$(echo "$OLD_LINE" | awk -F'|' '{print $5}' | xargs)
+
+            # Decide date
+            if [[ "$URL" == "$OLD_URL" && -n "${OLD_DATE:-}" ]]; then
+              FINAL_DATE="$OLD_DATE"
+            else
+              FINAL_DATE="$DATE"
+            fi
+
+            echo "| **$NAME** | $VERSION | [Download APK]($URL) | $FINAL_DATE |" >> README.md
 
           done < <(jq -c '.[]' apps.json)
 
@@ -118,7 +131,6 @@ jobs:
             | while read -r src; do
                 echo "- $src" >> README.md
               done
-
 
       - name: Commit and push if changed
         run: |
