@@ -10,7 +10,7 @@ Auto-updated weekly via GitHub Actions.
 | **MiXplorer** | v6.70.2_B26022710 | [Download APK](https://github.com/driftywinds/mixplorer-releases/releases/download/v6.70.2_B26022710/MiXplorer_v6.70.2_B26022710.apk) | 2026-02-27 |
 | **SmartTube arm** | 30.90s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/30.90s/SmartTube_stable_30.90_armeabi-v7a.apk) | 2026-02-26 |
 | **SmartTube arm64** | 30.90s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/30.90s/SmartTube_stable_30.90_arm64-v8a.apk) | 2026-02-26 |
-| **SmartTube Beta** | 30.75 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/30.75/SmartTube_beta_30.75_arm64-v8a.apk) | 2026-02-26 |
+| **SmartTube Beta** | 30.90 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/30.90/SmartTube_beta_30.90_arm64-v8a.apk) | 2026-02-27 |
 | **YT Revanced** | latest | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk) | 2026-02-26 |
 
 ## 🔗 Sources
