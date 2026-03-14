@@ -63,6 +63,6 @@
     "version_file": "microg_re.version",
     "type": "github",
     "repo": "MorpheApp/MicroG-RE",
-    "asset_name": "microg-.*\\.apk"
+    "asset_name": "microg.*\\.apk"
   }
 ]
