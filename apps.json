@@ -50,5 +50,19 @@
   "prerelease": true,
   "exclude_regex": "s$",
   "asset_regex": "SmartTube_beta_.*_arm64-v8a.apk"
+  },
+  {
+    "name": "YouTube Morphe",
+    "version_file": "youtube_morphe.version",
+    "type": "github",
+    "repo": "FiorenMas/Revanced-And-Revanced-Extended-Non-Root",
+    "asset_name": "youtube-morphe.apk"
+  },
+  {
+    "name": "MicroG-RE",
+    "version_file": "microg_re.version",
+    "type": "github",
+    "repo": "MorpheApp/MicroG-RE",
+    "asset_name": "microg-.*\\..apk"
   }
 ]
