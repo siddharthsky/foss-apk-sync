@@ -4,14 +4,14 @@
     "version_file": "metrolist.version",
     "type": "github",
     "repo": "MetrolistGroup/Metrolist",
-    "asset_name": "app-arm64-with-Google-Cast.apk"
+    "asset_name": "Metrolist-with-Google-Cast.apk"
   },
   {
     "name": "Metrolist",
     "version_file": "metrolist.version",
     "type": "github",
     "repo": "MetrolistGroup/Metrolist",
-    "asset_name": "app-arm64-release.apk"
+    "asset_name": "Metrolist.apk"
   },
   {
     "name": "Cromite",
