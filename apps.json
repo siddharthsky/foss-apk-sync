@@ -48,7 +48,7 @@
   "repo": "yuliskov/SmartTube",
   "version_file": "stube_beta.version",
   "prerelease": true,
-  "exclude_tag_regex": "s$",
+  "exclude_regex": "s$",
   "asset_regex": "SmartTube_beta_.*_arm64-v8a.apk"
   },
   {
