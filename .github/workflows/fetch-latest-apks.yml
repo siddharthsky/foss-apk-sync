@@ -57,9 +57,19 @@ jobs:
             VERSION=""
 
             if [[ "$TYPE" == "static" ]]; then
-              VERSION=$(jq -r '.version' <<< "$app")
-              URL=$(jq -r '.url' <<< "$app")
-              SOURCES+=("$URL")
+              VERSION=$(jq -r '.version // "latest"' <<< "$app")
+              PAGE=$(jq -r '.url' <<< "$app")
+            
+              if jq -e '.asset_regex?' <<< "$app" >/dev/null; then
+                REGEX=$(jq -r '.asset_regex' <<< "$app")
+                HTML=$(curl -fsSL "$PAGE")
+                URL=$(echo "$HTML" | grep -oP "$REGEX" | head -n1)
+              else
+                URL="$PAGE"
+              fi
+            
+              DOMAIN=$(echo "$PAGE" | sed -E 's#(https?://[^/]+)/.*#\1#')
+              SOURCES+=("$DOMAIN")
 
             else
               REPO=$(jq -r '.repo' <<< "$app")
