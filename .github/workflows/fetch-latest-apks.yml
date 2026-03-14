@@ -31,6 +31,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          sleep 1
           set -euo pipefail
 
           DATE=$(date -u +"%Y-%m-%d")
@@ -67,13 +68,30 @@ jobs:
 
               SOURCES+=("https://github.com/$REPO")
 
-              if [[ -n "$TAG" ]]; then
-                API="https://api.github.com/repos/$REPO/releases/tags/$TAG"
-              else
-                API="https://api.github.com/repos/$REPO/releases/latest"
-              fi
+              PRERELEASE=$(jq -r '.prerelease // false' <<< "$app")
 
-              JSON=$(curl -sfH "$AUTH" "$API" || echo '{}')
+              if [[ "$PRERELEASE" == "true" ]]; then
+                JSON=$(curl -sfH "$AUTH" "https://api.github.com/repos/$REPO/releases" || echo '[]')
+              
+                EXCLUDE=$(jq -r '.exclude_regex // empty' <<< "$app")
+              
+                RELEASE=$(jq -r --arg ex "$EXCLUDE" '
+                  map(select(.prerelease == true))
+                  | map(select(.tag_name | test($ex) | not))
+                  | first
+                ' <<< "$JSON")
+              
+                JSON="$RELEASE"
+              
+              else
+                if [[ -n "$TAG" ]]; then
+                  API="https://api.github.com/repos/$REPO/releases/tags/$TAG"
+                else
+                  API="https://api.github.com/repos/$REPO/releases/latest"
+                fi
+              
+                JSON=$(curl -fsSL --retry 3 --retry-delay 2 -H "$AUTH" "$API" || echo '{}')
+              fi
 
               if jq -e '.message?' <<< "$JSON" >/dev/null; then
                 JSON=$(curl -sfH "$AUTH" "https://api.github.com/repos/$REPO/releases/latest" || echo '{}')
