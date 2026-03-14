@@ -44,11 +44,11 @@
   },
   {
   "name": "SmartTube Beta",
-  "version_file": "stube_beta.version",
   "type": "github",
   "repo": "yuliskov/SmartTube",
+  "version_file": "stube_beta.version",
   "prerelease": true,
-  "exclude_regex": "s$",
+  "exclude_tag_regex": "s$",
   "asset_regex": "SmartTube_beta_.*_arm64-v8a.apk"
   },
   {
