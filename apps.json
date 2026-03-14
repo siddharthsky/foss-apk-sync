@@ -44,12 +44,12 @@
   },
   {
   "name": "SmartTube Beta",
+  "version_file": "stube_beta.version",
   "type": "github",
   "repo": "yuliskov/SmartTube",
-  "version_file": "stube_beta.version",
-  "tag": "30.90",
-  "asset_regex": "SmartTube_beta_.*_arm64-v8a.apk", 
-  "version_trim": 10
+  "prerelease": true,
+  "exclude_regex": "s$",
+  "asset_regex": "SmartTube_beta_.*_arm64-v8a.apk"
   },
   {
     "name": "YT Revanced",
