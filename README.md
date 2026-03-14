@@ -12,6 +12,7 @@ Auto-updated weekly via GitHub Actions.
 | **SmartTube arm64** | 31.08s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.08s/SmartTube_stable_31.08_arm64-v8a.apk) | 2026-03-14 |
 | **SmartTube Beta** | 31.08 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.08/SmartTube_beta_31.08_arm64-v8a.apk) | 2026-03-14 |
 | **YouTube Morphe** | all | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk) | 2026-03-14 |
+| **MicroG-RE** | 6.1.1 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.1/microg-6.1.1.apk) | 2026-03-14 |
 
 ## 🔗 Sources
 - https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root
