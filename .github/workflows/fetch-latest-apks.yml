@@ -57,6 +57,8 @@ jobs:
             NAME=$(jq -r '.name' <<< "$app")
             TYPE=$(jq -r '.type' <<< "$app")
             ICON=$(jq -r '.icon // ""' <<< "$app")
+            PKG=$(jq -r '.pkg // ""' <<< "$app")
+            KIND=$(jq -r '.kind // ""' <<< "$app")
 
             echo "➡️ Processing $NAME"
 
@@ -177,9 +179,13 @@ jobs:
             --arg url "$URL" \
             --arg source "$SOURCE" \
             --arg icon "$ICON" \
+            --arg pkg "$PKG" \
+            --arg kind "$KIND" \
             '{
               name: $name,
               icon: $icon,
+              pkg: $pkg,
+              kind: $kind,
               version: $version,
               url: $url,
               source: $source
