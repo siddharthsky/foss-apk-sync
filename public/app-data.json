@@ -17,7 +17,7 @@
 ,
 {
   "name": "Cromite",
-  "icon": "https://www.cromite.org/app_icon.png",
+  "icon": "https://i.ibb.co/0p7pffWP/cromite.png",
   "version": "v145.0.7632.120-d133",
   "url": "https://github.com/uazo/cromite/releases/download/v145.0.7632.120-d133d52d09c925b6542ff00e368d18d74df85e7c/arm64_ChromePublic.apk",
   "source": "https://github.com/uazo/cromite"
@@ -32,18 +32,10 @@
 }
 ,
 {
-  "name": "SmartTube arm",
+  "name": "SmartTube",
   "icon": "https://i.ibb.co/dFn1RVc/stube.jpg",
   "version": "31.17s",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/31.17s/SmartTube_stable_31.17_armeabi-v7a.apk",
-  "source": "https://github.com/yuliskov/SmartTube"
-}
-,
-{
-  "name": "SmartTube arm64",
-  "icon": "https://i.ibb.co/dFn1RVc/stube.jpg",
-  "version": "31.17s",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/31.17s/SmartTube_stable_31.17_arm64-v8a.apk",
+  "url": "https://github.com/yuliskov/SmartTube/releases/download/31.17s/SmartTube_stable_31.17_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
 }
 ,
@@ -51,7 +43,7 @@
   "name": "SmartTube Beta",
   "icon": "https://i.ibb.co/KcKgWxy5/stubebeta.png",
   "version": "31.17",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/31.17/SmartTube_beta_31.17_arm64-v8a.apk",
+  "url": "https://github.com/yuliskov/SmartTube/releases/download/31.17/SmartTube_beta_31.17_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
 }
 ,
@@ -65,7 +57,7 @@
 ,
 {
   "name": "MicroG-RE",
-  "icon": "",
+  "icon": "https://i.ibb.co/JFMQSZPJ/Micro-Gre.png",
   "version": "6.1.1",
   "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.1/microg-6.1.1.apk",
   "source": "https://github.com/MorpheApp/MicroG-RE"
