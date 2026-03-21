@@ -47,6 +47,12 @@ jobs:
             echo "|-----|--------|----------|--------------|"
           } > README.md
 
+          JSON_FILE="public/app-data.json"
+          mkdir -p public
+          
+          echo "[" > "$JSON_FILE"
+          FIRST=true
+
           while read -r app; do
             NAME=$(jq -r '.name' <<< "$app")
             TYPE=$(jq -r '.type' <<< "$app")
@@ -150,7 +156,35 @@ jobs:
 
             echo "| **$NAME** | $VERSION | [Download APK]($URL) | $FINAL_DATE |" >> README.md
 
+           # Add comma if not first item
+            if [ "$FIRST" = true ]; then
+              FIRST=false
+            else
+              echo "," >> "$JSON_FILE"
+            fi
+            
+            # Decide source
+            if [[ "$TYPE" == "static" ]]; then
+              SOURCE="$PAGE"
+            else
+              SOURCE="https://github.com/$REPO"
+            fi
+            
+            jq -n \
+              --arg name "$NAME" \
+              --arg version "$VERSION" \
+              --arg url "$URL" \
+              --arg source "$SOURCE" \
+              '{
+                name: $name,
+                version: $version,
+                url: $url,
+                source: $source
+              }' >> "$JSON_FILE"
+
           done < <(jq -c '.[]' apps.json)
+          
+          echo "]" >> "$JSON_FILE"
 
           # -------- SOURCES --------
 
@@ -168,8 +202,8 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          if git status --porcelain | grep -E "README.md|version/"; then
-            git add README.md version apps.json
+          if git status --porcelain | grep -E "README.md|version/|public/app-data.json"; then
+            git add README.md version apps.json public/app-data.json
             git commit -m "chore: update APK versions"
             git push
           else
