@@ -3,7 +3,7 @@
     "name": "Metrolist w/ Cast",
     "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
     "pkg": "com.metrolist.music",
-    "kind": "phone"
+    "kind": "phone",
     "version_file": "metrolist.version",
     "type": "github",
     "repo": "MetrolistGroup/Metrolist",
@@ -13,7 +13,7 @@
     "name": "Metrolist",
     "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
     "pkg": "com.metrolist.music",
-    "kind": "phone"
+    "kind": "phone",
     "version_file": "metrolist.version",
     "type": "github",
     "repo": "MetrolistGroup/Metrolist",
@@ -23,7 +23,7 @@
     "name": "Cromite",
     "icon": "https://i.ibb.co/0p7pffWP/cromite.png",
     "pkg": "org.cromite.cromite",
-    "kind": "phone"
+    "kind": "phone",
     "version_file": "cromite.version",
     "type": "github",
     "repo": "uazo/cromite",
@@ -34,7 +34,7 @@
     "name": "MiXplorer",
     "icon": "https://i.ibb.co/zTM9ydzn/mixp.png",
     "pkg": "com.mixplorer",
-    "kind": "phone"
+    "kind": "phone",
     "version_file": "mixplorer.version",
     "type": "github",
     "repo": "driftywinds/mixplorer-releases",
@@ -44,7 +44,7 @@
     "name": "SmartTube",
     "icon": "https://i.ibb.co/dFn1RVc/stube.jpg",
     "pkg": "org.smarttube.stable",
-    "kind": "tv"
+    "kind": "tv",
     "version_file": "stube.version",
     "type": "github",
     "repo": "yuliskov/SmartTube",
@@ -54,7 +54,7 @@
   "name": "SmartTube Beta",
   "icon": "https://i.ibb.co/KcKgWxy5/stubebeta.png",
   "pkg": "org.smarttube.beta",
-  "kind": "tv"
+  "kind": "tv",
   "type": "github",
   "repo": "yuliskov/SmartTube",
   "version_file": "stube_beta.version",
@@ -66,7 +66,7 @@
     "name": "YouTube Morphe",
     "icon": "https://i.ibb.co/P382xt8/youtube-morphe-icon-150.jpg",
     "pkg": "app.morphe.android.youtube",
-    "kind": "phone"
+    "kind": "phone",
     "version_file": "youtube_morphe.version",
     "type": "github",
     "repo": "FiorenMas/Revanced-And-Revanced-Extended-Non-Root",
@@ -76,7 +76,7 @@
     "name": "MicroG-RE",
     "icon": "https://i.ibb.co/JFMQSZPJ/Micro-Gre.png",
     "pkg": "app.revanced.android.gms",
-    "kind": "phone"
+    "kind": "phone",
     "version_file": "microg_re.version",
     "type": "github",
     "repo": "MorpheApp/MicroG-RE",
