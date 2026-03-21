@@ -1,7 +1,7 @@
 [
 {
   "name": "Metrolist w/ Cast",
-  "icon": "https://github.com/MetrolistGroup/Metrolist/blob/main/fastlane/metadata/android/en-US/images/icon.png",
+  "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "version": "v13.3.0",
   "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.3.0/Metrolist-with-Google-Cast.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
@@ -9,7 +9,7 @@
 ,
 {
   "name": "Metrolist",
-  "icon": "https://github.com/MetrolistGroup/Metrolist/blob/main/fastlane/metadata/android/en-US/images/icon.png",
+  "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "version": "v13.3.0",
   "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.3.0/Metrolist.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
@@ -17,7 +17,7 @@
 ,
 {
   "name": "Cromite",
-  "icon": "https://github.com/uazo/cromite/actions/workflows/build_cromite.yaml/badge.svg",
+  "icon": "https://www.cromite.org/app_icon.png",
   "version": "v145.0.7632.120-d133",
   "url": "https://github.com/uazo/cromite/releases/download/v145.0.7632.120-d133d52d09c925b6542ff00e368d18d74df85e7c/arm64_ChromePublic.apk",
   "source": "https://github.com/uazo/cromite"
