@@ -2,6 +2,8 @@
 {
   "name": "Metrolist w/ Cast",
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
+  "pkg": "com.metrolist.music",
+  "kind": "phone",
   "version": "v13.3.0",
   "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.3.0/Metrolist-with-Google-Cast.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
@@ -10,6 +12,8 @@
 {
   "name": "Metrolist",
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
+  "pkg": "com.metrolist.music",
+  "kind": "phone",
   "version": "v13.3.0",
   "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.3.0/Metrolist.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
@@ -18,6 +22,8 @@
 {
   "name": "Cromite",
   "icon": "https://i.ibb.co/0p7pffWP/cromite.png",
+  "pkg": "org.cromite.cromite",
+  "kind": "phone",
   "version": "v145.0.7632.120-d133",
   "url": "https://github.com/uazo/cromite/releases/download/v145.0.7632.120-d133d52d09c925b6542ff00e368d18d74df85e7c/arm64_ChromePublic.apk",
   "source": "https://github.com/uazo/cromite"
@@ -26,6 +32,8 @@
 {
   "name": "MiXplorer",
   "icon": "https://i.ibb.co/zTM9ydzn/mixp.png",
+  "pkg": "com.mixplorer",
+  "kind": "phone",
   "version": "v6.70.3_B26022810",
   "url": "https://github.com/driftywinds/mixplorer-releases/releases/download/v6.70.3_B26022810/MiXplorer_v6.70.3_B26022810.apk",
   "source": "https://github.com/driftywinds/mixplorer-releases"
@@ -34,6 +42,8 @@
 {
   "name": "SmartTube",
   "icon": "https://i.ibb.co/dFn1RVc/stube.jpg",
+  "pkg": "org.smarttube.stable",
+  "kind": "tv",
   "version": "31.17s",
   "url": "https://github.com/yuliskov/SmartTube/releases/download/31.17s/SmartTube_stable_31.17_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
@@ -42,6 +52,8 @@
 {
   "name": "SmartTube Beta",
   "icon": "https://i.ibb.co/KcKgWxy5/stubebeta.png",
+  "pkg": "org.smarttube.beta",
+  "kind": "tv",
   "version": "31.17",
   "url": "https://github.com/yuliskov/SmartTube/releases/download/31.17/SmartTube_beta_31.17_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
@@ -50,6 +62,8 @@
 {
   "name": "YouTube Morphe",
   "icon": "https://i.ibb.co/P382xt8/youtube-morphe-icon-150.jpg",
+  "pkg": "app.morphe.android.youtube",
+  "kind": "phone",
   "version": "all",
   "url": "https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk",
   "source": "https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root"
@@ -58,6 +72,8 @@
 {
   "name": "MicroG-RE",
   "icon": "https://i.ibb.co/JFMQSZPJ/Micro-Gre.png",
+  "pkg": "app.revanced.android.gms",
+  "kind": "phone",
   "version": "6.1.1",
   "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.1/microg-6.1.1.apk",
   "source": "https://github.com/MorpheApp/MicroG-RE"
