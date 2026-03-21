@@ -172,6 +172,7 @@ jobs:
             
             jq -n \
               --arg name "$NAME" \
+              --arg url "$ICON" \
               --arg version "$VERSION" \
               --arg url "$URL" \
               --arg source "$SOURCE" \
