@@ -9,7 +9,7 @@ Auto-updated weekly via GitHub Actions.
 | **Cromite** | v145.0.7632.120-d133 | [Download APK](https://github.com/uazo/cromite/releases/download/v145.0.7632.120-d133d52d09c925b6542ff00e368d18d74df85e7c/arm64_ChromePublic.apk) | 2026-03-14 |
 | **MiXplorer** | v6.70.3_B26022810 | [Download APK](https://github.com/driftywinds/mixplorer-releases/releases/download/v6.70.3_B26022810/MiXplorer_v6.70.3_B26022810.apk) | 2026-03-14 |
 | **SmartTube** | 31.17s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.17s/SmartTube_stable_31.17_universal.apk) | 2026-03-21 |
-| **SmartTube Beta** | 31.17 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.17/SmartTube_beta_31.17_universal.apk) | 2026-03-21 |
+| **SmartTube Beta** | 31.24 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.24/SmartTube_beta_31.24_universal.apk) | 2026-03-22 |
 | **YouTube Morphe** | all | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk) | 2026-03-14 |
 | **MicroG-RE** | 6.1.1 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.1/microg-6.1.1.apk) | 2026-03-14 |
 
