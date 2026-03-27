@@ -12,11 +12,13 @@ Auto-updated weekly via GitHub Actions.
 | **SmartTube Beta** | 31.30 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.30/SmartTube_beta_31.30_universal.apk) | 2026-03-27 |
 | **YouTube Morphe** | all | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk) | 2026-03-14 |
 | **MicroG-RE** | 6.1.1 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.1/microg-6.1.1.apk) | 2026-03-14 |
+| **AerialViews** | 1.8.1 | [Download APK](https://github.com/theothernt/AerialViews/releases/download/1.8.1/aerial-views-1.8.1.apk) | 2026-03-27 |
 
 ## 🔗 Sources
 - https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root
 - https://github.com/MetrolistGroup/Metrolist
 - https://github.com/MorpheApp/MicroG-RE
 - https://github.com/driftywinds/mixplorer-releases
+- https://github.com/theothernt/AerialViews
 - https://github.com/uazo/cromite
 - https://github.com/yuliskov/SmartTube

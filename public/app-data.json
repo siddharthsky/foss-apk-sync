@@ -78,4 +78,14 @@
   "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.1/microg-6.1.1.apk",
   "source": "https://github.com/MorpheApp/MicroG-RE"
 }
+,
+{
+  "name": "AerialViews",
+  "icon": "https://i.ibb.co/vxqnF3b5/Aerial-Views.png",
+  "pkg": "com.neilturner.aerialviews",
+  "kind": "tv",
+  "version": "1.8.1",
+  "url": "https://github.com/theothernt/AerialViews/releases/download/1.8.1/aerial-views-1.8.1.apk",
+  "source": "https://github.com/theothernt/AerialViews"
+}
 ]
