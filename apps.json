@@ -81,5 +81,15 @@
     "type": "github",
     "repo": "MorpheApp/MicroG-RE",
     "asset_regex": "microg.*\\.apk"
+  },
+   {
+    "name": "AerialViews",
+    "icon": "https://i.ibb.co/vxqnF3b5/Aerial-Views.png",
+    "pkg": "com.neilturner.aerialviews",
+    "kind": "tv",
+    "version_file": "aerialviews.version",
+    "type": "github",
+    "repo": "theothernt/AerialViews",
+    "asset_regex": "aerial-views-.*\\.apk"
   }
 ]
