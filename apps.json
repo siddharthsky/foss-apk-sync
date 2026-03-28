@@ -91,5 +91,16 @@
     "type": "github",
     "repo": "theothernt/AerialViews",
     "asset_regex": "aerial-views-.*\\.apk"
+  },
+  {
+    "name": "JTV-GO Server",
+    "icon": "https://i.ibb.co/kgGfRQR0/jgoot.png",
+    "pkg": "com.skylake.skytv.jgorunner",
+    "kind": "tv",
+    "version_file": "jgorunner.version",
+    "type": "github",
+    "repo": "JioTV-Go/jiotv_go_app",
+    "asset_regex": "JTV-GO-Server-.*-release.apk" 
   }
+]
 ]
