@@ -11,7 +11,7 @@ Auto-updated weekly via GitHub Actions.
 | **SmartTube** | 31.63s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.63s/SmartTube_stable_31.63_universal.apk) | 2026-04-28 |
 | **SmartTube Beta** | 31.63 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.63/SmartTube_beta_31.63_universal.apk) | 2026-04-25 |
 | **YouTube Morphe** | all | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk) | 2026-03-14 |
-| **MicroG-RE** | 6.1.3 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.3/microg-6.1.3.apk) | 2026-04-20 |
+| **MicroG-RE** | 6.1.4 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.4/microg-6.1.4.apk) | 2026-05-01 |
 | **AerialViews** | 1.8.2 | [Download APK](https://github.com/theothernt/AerialViews/releases/download/1.8.2/aerial-views-1.8.2.apk) | 2026-04-01 |
 | **JTV-GO Server** | v1.1.14 | [Download APK](https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.1.14/JTV-GO-Server-v1.1.14-release.apk) | 2026-03-28 |
 
