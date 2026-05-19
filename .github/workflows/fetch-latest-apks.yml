@@ -34,7 +34,7 @@ jobs:
           sleep 1
           set -euo pipefail
 
-          DATE=$(date -u +"%Y-%m-%d")
+          DATE=$(date -u +"%d-%m-%Y")
           AUTH="Authorization: Bearer $GH_TOKEN"
           SOURCES=()
 
