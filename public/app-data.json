@@ -64,7 +64,7 @@
   "icon": "https://i.ibb.co/P382xt8/youtube-morphe-icon-150.jpg",
   "pkg": "app.morphe.android.youtube",
   "kind": "phone",
-  "version": "all",
+  "version": "latest",
   "url": "https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk",
   "source": "https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root"
 }
