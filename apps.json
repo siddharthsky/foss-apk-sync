@@ -101,5 +101,15 @@
     "type": "github",
     "repo": "JioTV-Go/jiotv_go_app",
     "asset_regex": "JTV-GO-Server-.*-release.apk" 
+  },
+   {
+    "name": "Seal",
+    "icon": "https://github.com/JunkFood02/Seal/raw/main/fastlane/metadata/android/en-US/images/icon.png",
+    "pkg": "com.skylake.skytv.jgorunner",
+    "kind": "phone",
+    "version_file": "seal.version",
+    "type": "github",
+    "repo": "JunkFood02/Seal",
+    "asset_regex": "Seal-.*-universal-release.apk" 
   }
 ]
