@@ -98,4 +98,14 @@
   "url": "https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.1.16/JTV-GO-Server-v1.1.16-release.apk",
   "source": "https://github.com/JioTV-Go/jiotv_go_app"
 }
+,
+{
+  "name": "Seal",
+  "icon": "https://github.com/JunkFood02/Seal/raw/main/fastlane/metadata/android/en-US/images/icon.png",
+  "pkg": "com.skylake.skytv.jgorunner",
+  "kind": "phone",
+  "version": "v1.13.1",
+  "url": "https://github.com/JunkFood02/Seal/releases/download/v1.13.1/Seal-1.13.1-universal-release.apk",
+  "source": "https://github.com/JunkFood02/Seal"
+}
 ]
