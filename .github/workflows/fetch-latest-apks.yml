@@ -147,16 +147,20 @@ jobs:
 
             # Get previous URL and date from old README
             OLD_LINE=$(grep -F "| **$NAME** |" README.old.md 2>/dev/null || true)
-            OLD_URL=$(echo "$OLD_LINE" | sed -n 's/.*(\(http[^)]*\)).*/\1/p')
-            OLD_DATE=$(echo "$OLD_LINE" | awk -F'|' '{print $5}' | xargs)
-
+            
+            # Extract previous APK URL safely
+            OLD_URL=$(echo "$OLD_LINE" | grep -oP '\[Download APK\]\(\K[^)]+' || true)
+            
+            # Extract last column (date) safely
+            OLD_DATE=$(echo "$OLD_LINE" | rev | cut -d'|' -f2 | rev | xargs)
+        
             # Decide date
-            if [[ "$URL" == "$OLD_URL" && -n "${OLD_DATE:-}" ]]; then
+            if [[ "$URL" == "$OLD_URL" && -n "$OLD_DATE" ]]; then
               FINAL_DATE="$OLD_DATE"
             else
-              FINAL_DATE="$DATE"
+             FINAL_DATE="$DATE"
             fi
-
+            
             echo "| **$NAME** | $VERSION | [Download APK]($URL) | $FINAL_DATE |" >> README.md
 
            # Add comma if not first item
