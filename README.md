@@ -6,7 +6,7 @@ Auto-updated weekly via GitHub Actions.
 |-----|--------|----------|--------------|
 | **Metrolist w/ Cast** | v13.4.3 | [Download APK](https://github.com/MetrolistGroup/Metrolist/releases/download/v13.4.3/Metrolist-with-Google-Cast.apk) | 2026-05-19 |
 | **Metrolist** | v13.4.3 | [Download APK](https://github.com/MetrolistGroup/Metrolist/releases/download/v13.4.3/Metrolist.apk) | 2026-05-19 |
-| **Cromite** | v147.0.7727.56-27190 | [Download APK](https://github.com/uazo/cromite/releases/download/v147.0.7727.56-271900671db643de04aa9f909f0dcc3415c8b827/arm64_ChromePublic.apk) | 2026-04-11 |
+| **Cromite** | v148.0.7778.168-cb3b | [Download APK](https://github.com/uazo/cromite/releases/download/v148.0.7778.168-cb3baf14f52eb4365d017f640f85310735c19b79/arm64_ChromePublic.apk) | 22-05-2026 |
 | **MiXplorer** | v6.70.3_B26022810 | [Download APK](https://github.com/driftywinds/mixplorer-releases/releases/download/v6.70.3_B26022810/MiXplorer_v6.70.3_B26022810.apk) | 2026-03-14 |
 | **SmartTube** | 31.63s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.63s/SmartTube_stable_31.63_universal.apk) | 2026-04-28 |
 | **SmartTube Beta** | 31.67 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.67/SmartTube_beta_31.67_universal.apk) | 2026-05-19 |
