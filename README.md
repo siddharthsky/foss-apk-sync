@@ -4,8 +4,8 @@ Auto-updated weekly via GitHub Actions.
 
 | App | Version | Download | Last Updated |
 |-----|--------|----------|--------------|
-| **Metrolist w/ Cast** | v13.4.3 | [Download APK](https://github.com/MetrolistGroup/Metrolist/releases/download/v13.4.3/Metrolist-with-Google-Cast.apk) | 2026-05-19 |
-| **Metrolist** | v13.4.3 | [Download APK](https://github.com/MetrolistGroup/Metrolist/releases/download/v13.4.3/Metrolist.apk) | 2026-05-19 |
+| **Metrolist w/ Cast** | v13.5.0 | [Download APK](https://github.com/MetrolistGroup/Metrolist/releases/download/v13.5.0/Metrolist-with-Google-Cast.apk) | 04-06-2026 |
+| **Metrolist** | v13.5.0 | [Download APK](https://github.com/MetrolistGroup/Metrolist/releases/download/v13.5.0/Metrolist.apk) | 04-06-2026 |
 | **Cromite** | v148.0.7778.168-cb3b | [Download APK](https://github.com/uazo/cromite/releases/download/v148.0.7778.168-cb3baf14f52eb4365d017f640f85310735c19b79/arm64_ChromePublic.apk) | 22-05-2026 |
 | **MiXplorer** | v6.70.3_B26022810 | [Download APK](https://github.com/driftywinds/mixplorer-releases/releases/download/v6.70.3_B26022810/MiXplorer_v6.70.3_B26022810.apk) | 2026-03-14 |
 | **SmartTube** | 31.73s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.73s/SmartTube_stable_31.73_universal.apk) | 28-05-2026 |

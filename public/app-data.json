@@ -4,8 +4,8 @@
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "pkg": "com.metrolist.music",
   "kind": "phone",
-  "version": "v13.4.3",
-  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.4.3/Metrolist-with-Google-Cast.apk",
+  "version": "v13.5.0",
+  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.5.0/Metrolist-with-Google-Cast.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
 }
 ,
@@ -14,8 +14,8 @@
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "pkg": "com.metrolist.music",
   "kind": "phone",
-  "version": "v13.4.3",
-  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.4.3/Metrolist.apk",
+  "version": "v13.5.0",
+  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.5.0/Metrolist.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
 }
 ,
