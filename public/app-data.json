@@ -4,8 +4,8 @@
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "pkg": "com.metrolist.music",
   "kind": "phone",
-  "version": "v13.6.0",
-  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.6.0/Metrolist-with-Google-Cast.apk",
+  "version": "v13.6.1",
+  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.6.1/Metrolist-with-Google-Cast.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
 }
 ,
@@ -14,8 +14,8 @@
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "pkg": "com.metrolist.music",
   "kind": "phone",
-  "version": "v13.6.0",
-  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.6.0/Metrolist.apk",
+  "version": "v13.6.1",
+  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.6.1/Metrolist.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
 }
 ,
@@ -34,8 +34,8 @@
   "icon": "https://i.ibb.co/zTM9ydzn/mixp.png",
   "pkg": "com.mixplorer",
   "kind": "phone",
-  "version": "v6.71.1_B26071210",
-  "url": "https://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.1_B26071210/MiXplorer_v6.71.1_B26071210.apk",
+  "version": "v6.71.2_B26071620",
+  "url": "https://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.2_B26071620/MiXplorer_v6.71.2_B26071620.apk",
   "source": "https://github.com/driftywinds/mixplorer-releases"
 }
 ,
