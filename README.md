@@ -7,9 +7,9 @@ Auto-updated weekly via GitHub Actions.
 | **Metrolist w/ Cast** | v13.6.1 | [Download APK](https://github.com/MetrolistGroup/Metrolist/releases/download/v13.6.1/Metrolist-with-Google-Cast.apk) | 19-07-2026 |
 | **Metrolist** | v13.6.1 | [Download APK](https://github.com/MetrolistGroup/Metrolist/releases/download/v13.6.1/Metrolist.apk) | 19-07-2026 |
 | **Cromite** | v148.0.7778.168-cb3b | [Download APK](https://github.com/uazo/cromite/releases/download/v148.0.7778.168-cb3baf14f52eb4365d017f640f85310735c19b79/arm64_ChromePublic.apk) | 22-05-2026 |
-| **MiXplorer** | v6.71.5_B26072420 | [Download APK](https://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.5_B26072420/MiXplorer_v6.71.5_B26072420.apk) | 25-07-2026 |
+| **MiXplorer** | v6.71.6_B26072610 | [Download APK](https://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.6_B26072610/MiXplorer_v6.71.6_B26072610.apk) | 28-07-2026 |
 | **SmartTube** | 31.94s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/31.94s/SmartTube_stable_31.94_universal.apk) | 13-06-2026 |
-| **SmartTube Beta** | 32.03 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/32.03/SmartTube_beta_32.03_universal.apk) | 13-07-2026 |
+| **SmartTube Beta** | 32.10 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/32.10/SmartTube_beta_32.10_universal.apk) | 28-07-2026 |
 | **YouTube Morphe** | all | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk) | 2026-03-14 |
 | **MicroG-RE** | 6.1.4 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.4/microg-6.1.4.apk) | 2026-05-01 |
 | **AerialViews** | 1.8.3 | [Download APK](https://github.com/theothernt/AerialViews/releases/download/1.8.3/aerial-views-1.8.3.apk) | 04-07-2026 |
