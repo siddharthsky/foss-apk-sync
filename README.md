@@ -15,6 +15,7 @@ Auto-updated weekly via GitHub Actions.
 | **AerialViews** | 1.8.4 | [Download APK](https://github.com/theothernt/AerialViews/releases/download/1.8.4/aerial-views-1.8.4.apk) | 01-08-2026 |
 | **JTV-GO Server** | v1.2.0 | [Download APK](https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.2.0/JTV-GO-Server-v1.2.0-release.apk) | 15-08-2026 |
 | **Seal** | v1.13.1 | [Download APK](https://github.com/JunkFood02/Seal/releases/download/v1.13.1/Seal-1.13.1-universal-release.apk) | 19-05-2026 |
+| **Local Send** | v1.18.1 | [Download APK](https://github.com/localsend/localsend/releases/download/v1.18.1/LocalSend-1.18.1-android-google-play.apk) | 15-08-2026 |
 
 ## 🔗 Sources
 - https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root

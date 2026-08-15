@@ -108,4 +108,14 @@
   "url": "https://github.com/JunkFood02/Seal/releases/download/v1.13.1/Seal-1.13.1-universal-release.apk",
   "source": "https://github.com/JunkFood02/Seal"
 }
+,
+{
+  "name": "Local Send",
+  "icon": "https://i.ibb.co/tPK0nB3p/localsend-256px.png",
+  "pkg": "org.localsend.localsend_app",
+  "kind": "phone",
+  "version": "v1.18.1",
+  "url": "https://github.com/localsend/localsend/releases/download/v1.18.1/LocalSend-1.18.1-android-google-play.apk",
+  "source": "https://github.com/localsend/localsend"
+}
 ]
