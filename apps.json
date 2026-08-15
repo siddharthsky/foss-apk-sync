@@ -111,5 +111,15 @@
     "type": "github",
     "repo": "JunkFood02/Seal",
     "asset_regex": "Seal-.*-universal-release.apk" 
+  },
+   {
+    "name": "Local Send",
+    "icon": "https://i.ibb.co/tPK0nB3p/localsend-256px.png",
+    "pkg": "org.localsend.localsend_app",
+    "kind": "phone",
+    "version_file": "localsend.version",
+    "type": "github",
+    "repo": "localsend/localsend",
+    "asset_regex": "LocalSend-.*-android-google-play.apk "
   }
 ]
