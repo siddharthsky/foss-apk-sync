@@ -120,6 +120,6 @@
     "version_file": "localsend.version",
     "type": "github",
     "repo": "localsend/localsend",
-    "asset_regex": "LocalSend-.*-android-google-play.apk "
+    "asset_regex": "LocalSend-.*-android-google-play.apk"
   }
 ]
