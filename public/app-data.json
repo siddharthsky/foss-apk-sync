@@ -94,8 +94,8 @@
   "icon": "https://i.ibb.co/kgGfRQR0/jgoot.png",
   "pkg": "com.skylake.skytv.jgorunner",
   "kind": "tv",
-  "version": "v1.1.16",
-  "url": "https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.1.16/JTV-GO-Server-v1.1.16-release.apk",
+  "version": "v1.2.0",
+  "url": "https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.2.0/JTV-GO-Server-v1.2.0-release.apk",
   "source": "https://github.com/JioTV-Go/jiotv_go_app"
 }
 ,

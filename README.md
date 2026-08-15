@@ -13,7 +13,7 @@ Auto-updated weekly via GitHub Actions.
 | **YouTube Morphe** | all | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk) | 2026-03-14 |
 | **MicroG-RE** | 6.1.4 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.4/microg-6.1.4.apk) | 2026-05-01 |
 | **AerialViews** | 1.8.4 | [Download APK](https://github.com/theothernt/AerialViews/releases/download/1.8.4/aerial-views-1.8.4.apk) | 01-08-2026 |
-| **JTV-GO Server** | v1.1.16 | [Download APK](https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.1.16/JTV-GO-Server-v1.1.16-release.apk) | 2026-05-10 |
+| **JTV-GO Server** | v1.2.0 | [Download APK](https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.2.0/JTV-GO-Server-v1.2.0-release.apk) | 15-08-2026 |
 | **Seal** | v1.13.1 | [Download APK](https://github.com/JunkFood02/Seal/releases/download/v1.13.1/Seal-1.13.1-universal-release.apk) | 19-05-2026 |
 
 ## 🔗 Sources
@@ -23,6 +23,7 @@ Auto-updated weekly via GitHub Actions.
 - https://github.com/MetrolistGroup/Metrolist
 - https://github.com/MorpheApp/MicroG-RE
 - https://github.com/driftywinds/mixplorer-releases
+- https://github.com/localsend/localsend
 - https://github.com/theothernt/AerialViews
 - https://github.com/uazo/cromite
 - https://github.com/yuliskov/SmartTube
