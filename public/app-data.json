@@ -54,8 +54,8 @@
   "icon": "https://i.ibb.co/KcKgWxy5/stubebeta.png",
   "pkg": "org.smarttube.beta",
   "kind": "tv",
-  "version": "32.10",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.10/SmartTube_beta_32.10_universal.apk",
+  "version": "32.22",
+  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.22/SmartTube_beta_32.22_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
 }
 ,
@@ -114,8 +114,8 @@
   "icon": "https://i.ibb.co/tPK0nB3p/localsend-256px.png",
   "pkg": "org.localsend.localsend_app",
   "kind": "phone",
-  "version": "v1.18.1",
-  "url": "https://github.com/localsend/localsend/releases/download/v1.18.1/LocalSend-1.18.1-android-google-play.apk",
+  "version": "v1.18.2",
+  "url": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-android-google-play.apk",
   "source": "https://github.com/localsend/localsend"
 }
 ]
