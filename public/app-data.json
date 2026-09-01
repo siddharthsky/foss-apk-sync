@@ -44,8 +44,8 @@
   "icon": "https://i.ibb.co/dFn1RVc/stube.jpg",
   "pkg": "org.smarttube.stable",
   "kind": "tv",
-  "version": "32.10s",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.10s/SmartTube_stable_32.10_universal.apk",
+  "version": "32.38s",
+  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.38s/SmartTube_stable_32.38_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
 }
 ,
@@ -54,8 +54,8 @@
   "icon": "https://i.ibb.co/KcKgWxy5/stubebeta.png",
   "pkg": "org.smarttube.beta",
   "kind": "tv",
-  "version": "32.22",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.22/SmartTube_beta_32.22_universal.apk",
+  "version": "32.38",
+  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.38/SmartTube_beta_32.38_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
 }
 ,
