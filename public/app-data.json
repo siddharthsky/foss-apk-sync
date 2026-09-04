@@ -34,8 +34,8 @@
   "icon": "https://i.ibb.co/zTM9ydzn/mixp.png",
   "pkg": "com.mixplorer",
   "kind": "phone",
-  "version": "v6.71.12_B26082610",
-  "url": "https://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.12_B26082610/MiXplorer_v6.71.12_B26082610.apk",
+  "version": "v6.71.14_B26090320",
+  "url": "https://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.14_B26090320/MiXplorer_v6.71.14_B26090320.apk",
   "source": "https://github.com/driftywinds/mixplorer-releases"
 }
 ,
@@ -74,8 +74,8 @@
   "icon": "https://i.ibb.co/JFMQSZPJ/Micro-Gre.png",
   "pkg": "app.revanced.android.gms",
   "kind": "phone",
-  "version": "6.1.4",
-  "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/6.1.4/microg-6.1.4.apk",
+  "version": "7.0.0",
+  "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/7.0.0/microg-7.0.0-arm64-v8a.apk\nhttps://github.com/MorpheApp/MicroG-RE/releases/download/7.0.0/microg-7.0.0-noicon-arm64-v8a.apk\nhttps://github.com/MorpheApp/MicroG-RE/releases/download/7.0.0/microg-7.0.0-noicon.apk\nhttps://github.com/MorpheApp/MicroG-RE/releases/download/7.0.0/microg-7.0.0.apk",
   "source": "https://github.com/MorpheApp/MicroG-RE"
 }
 ,
