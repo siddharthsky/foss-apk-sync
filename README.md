@@ -11,10 +11,10 @@ Auto-updated weekly via GitHub Actions.
 | **SmartTube** | 32.38s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/32.38s/SmartTube_stable_32.38_universal.apk) | 01-09-2026 |
 | **SmartTube Beta** | 32.38 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/32.38/SmartTube_beta_32.38_universal.apk) | 01-09-2026 |
 | **YouTube Morphe** | all | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk) | 2026-03-14 |
-| **MicroG-RE** | 7.0.0 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/7.0.0/microg-7.0.0-arm64-v8a.apk
-https://github.com/MorpheApp/MicroG-RE/releases/download/7.0.0/microg-7.0.0-noicon-arm64-v8a.apk
-https://github.com/MorpheApp/MicroG-RE/releases/download/7.0.0/microg-7.0.0-noicon.apk
-https://github.com/MorpheApp/MicroG-RE/releases/download/7.0.0/microg-7.0.0.apk) | 04-09-2026 |
+| **MicroG-RE** | 7.1.0 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/7.1.0/microg-7.1.0-arm64-v8a.apk
+https://github.com/MorpheApp/MicroG-RE/releases/download/7.1.0/microg-7.1.0-noicon-arm64-v8a.apk
+https://github.com/MorpheApp/MicroG-RE/releases/download/7.1.0/microg-7.1.0-noicon.apk
+https://github.com/MorpheApp/MicroG-RE/releases/download/7.1.0/microg-7.1.0.apk) | 07-09-2026 |
 | **AerialViews** | 1.8.4 | [Download APK](https://github.com/theothernt/AerialViews/releases/download/1.8.4/aerial-views-1.8.4.apk) | 01-08-2026 |
 | **JTV-GO Server** | v1.2.0 | [Download APK](https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.2.0/JTV-GO-Server-v1.2.0-release.apk) | 15-08-2026 |
 | **Seal** | v1.13.1 | [Download APK](https://github.com/JunkFood02/Seal/releases/download/v1.13.1/Seal-1.13.1-universal-release.apk) | 19-05-2026 |
