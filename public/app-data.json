@@ -4,8 +4,8 @@
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "pkg": "com.metrolist.music",
   "kind": "phone",
-  "version": "v13.6.3",
-  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.6.3/Metrolist-with-Google-Cast.apk",
+  "version": "v13.7.0",
+  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.7.0/Metrolist-with-Google-Cast.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
 }
 ,
@@ -14,8 +14,8 @@
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "pkg": "com.metrolist.music",
   "kind": "phone",
-  "version": "v13.6.3",
-  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.6.3/Metrolist.apk",
+  "version": "v13.7.0",
+  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.7.0/Metrolist.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
 }
 ,
@@ -54,8 +54,8 @@
   "icon": "https://i.ibb.co/KcKgWxy5/stubebeta.png",
   "pkg": "org.smarttube.beta",
   "kind": "tv",
-  "version": "32.38",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.38/SmartTube_beta_32.38_universal.apk",
+  "version": "32.45",
+  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.45/SmartTube_beta_32.45_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
 }
 ,
