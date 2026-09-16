@@ -24,8 +24,8 @@
   "icon": "https://i.ibb.co/0p7pffWP/cromite.png",
   "pkg": "org.cromite.cromite",
   "kind": "phone",
-  "version": "v148.0.7778.168-cb3b",
-  "url": "https://github.com/uazo/cromite/releases/download/v148.0.7778.168-cb3baf14f52eb4365d017f640f85310735c19b79/arm64_ChromePublic.apk",
+  "version": "v153.0.8010.37-11507",
+  "url": "https://github.com/uazo/cromite/releases/download/v153.0.8010.37-11507ac1061b5ea227806f5e84db5a57df6ccf6a/arm64_ChromePublic.apk",
   "source": "https://github.com/uazo/cromite"
 }
 ,
@@ -44,8 +44,8 @@
   "icon": "https://i.ibb.co/dFn1RVc/stube.jpg",
   "pkg": "org.smarttube.stable",
   "kind": "tv",
-  "version": "32.38s",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.38s/SmartTube_stable_32.38_universal.apk",
+  "version": "32.47s",
+  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.47s/SmartTube_stable_32.47_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
 }
 ,
