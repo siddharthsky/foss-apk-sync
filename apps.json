@@ -80,7 +80,16 @@
     "version_file": "microg_re.version",
     "type": "github",
     "repo": "MorpheApp/MicroG-RE",
-    "asset_regex": "microg.*\\.apk"
+    "asset_regex": "microg.*\\-noicon.apk"
+  },  {
+    "name": "MicroG-RE ARM64",
+    "icon": "https://i.ibb.co/JFMQSZPJ/Micro-Gre.png",
+    "pkg": "app.revanced.android.gms",
+    "kind": "phone",
+    "version_file": "microg_re_arm64.version",
+    "type": "github",
+    "repo": "MorpheApp/MicroG-RE",
+    "asset_regex": "microg.*\\-noicon-arm64-v8a.apk"
   },
    {
     "name": "AerialViews",
