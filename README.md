@@ -17,6 +17,7 @@ Auto-updated weekly via GitHub Actions.
 | **JTV-GO Server** | v1.2.0 | [Download APK](https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.2.0/JTV-GO-Server-v1.2.0-release.apk) | 19-09-2026 |
 | **Seal** | v1.13.1 | [Download APK](https://github.com/JunkFood02/Seal/releases/download/v1.13.1/Seal-1.13.1-universal-release.apk) | 19-09-2026 |
 | **Local Send** | v1.18.2 | [Download APK](https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-android-google-play.apk) | 19-09-2026 |
+| **GBoardWu ARM64** | latest | [Download APK](https://github.com/yashrajrocxx/Mophe-AutoBuilds/releases/download/latest/gboard-arm64-v8a-jasonwu-v18.0.3.954559732-release-arm64-v8a.apk) | 19-09-2026 |
 
 ## 🔗 Sources
 - https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root
@@ -28,4 +29,5 @@ Auto-updated weekly via GitHub Actions.
 - https://github.com/localsend/localsend
 - https://github.com/theothernt/AerialViews
 - https://github.com/uazo/cromite
+- https://github.com/yashrajrocxx/Mophe-AutoBuilds
 - https://github.com/yuliskov/SmartTube
