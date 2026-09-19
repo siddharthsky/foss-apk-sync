@@ -130,5 +130,15 @@
     "type": "github",
     "repo": "localsend/localsend",
     "asset_regex": "LocalSend-.*-android-google-play.apk"
+  },
+   {
+    "name": "GBoardWu ARM64",
+    "icon": "https://i.ibb.co/qMtZvDJq/image.png",
+    "pkg": "com.google.android.inputmethod.latin",
+    "kind": "phone",
+    "version_file": "gboard_wu_arm64.version",
+    "type": "github",
+    "repo": "yashrajrocxx/Mophe-AutoBuilds",
+    "asset_regex": "gboard-arm64-v8a-jasonwu-.*-release-arm64-v8a.apk"
   }
 ]
