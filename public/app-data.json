@@ -54,8 +54,8 @@
   "icon": "https://i.ibb.co/KcKgWxy5/stubebeta.png",
   "pkg": "org.smarttube.beta",
   "kind": "tv",
-  "version": "32.47",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.47/SmartTube_beta_32.47_universal.apk",
+  "version": "32.54",
+  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.54/SmartTube_beta_32.54_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
 }
 ,
@@ -127,15 +127,5 @@
   "version": "v1.18.2",
   "url": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-android-google-play.apk",
   "source": "https://github.com/localsend/localsend"
-}
-,
-{
-  "name": "GBoardWu ARM64",
-  "icon": "https://i.ibb.co/qMtZvDJq/image.png",
-  "pkg": "com.google.android.inputmethod.latin",
-  "kind": "phone",
-  "version": "latest",
-  "url": "https://github.com/yashrajrocxx/Mophe-AutoBuilds/releases/download/latest/gboard-arm64-v8a-jasonwu-v18.0.3.954559732-release-arm64-v8a.apk",
-  "source": "https://github.com/yashrajrocxx/Mophe-AutoBuilds"
 }
 ]

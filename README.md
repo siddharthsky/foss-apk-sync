@@ -9,7 +9,7 @@ Auto-updated weekly via GitHub Actions.
 | **Cromite** | v153.0.8010.37-11507 | [Download APK](https://github.com/uazo/cromite/releases/download/v153.0.8010.37-11507ac1061b5ea227806f5e84db5a57df6ccf6a/arm64_ChromePublic.apk) | 19-09-2026 |
 | **MiXplorer** | v6.71.14_B26090320 | [Download APK](https://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.14_B26090320/MiXplorer_v6.71.14_B26090320.apk) | 19-09-2026 |
 | **SmartTube** | 32.47s | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/32.47s/SmartTube_stable_32.47_universal.apk) | 19-09-2026 |
-| **SmartTube Beta** | 32.47 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/32.47/SmartTube_beta_32.47_universal.apk) | 19-09-2026 |
+| **SmartTube Beta** | 32.54 | [Download APK](https://github.com/yuliskov/SmartTube/releases/download/32.54/SmartTube_beta_32.54_universal.apk) | 22-09-2026 |
 | **YouTube Morphe** | all | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk) | 19-09-2026 |
 | **MicroG-RE** | 7.1.1 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/7.1.1/microg-7.1.1-noicon.apk) | 19-09-2026 |
 | **MicroG-RE ARM64** | 7.1.1 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/7.1.1/microg-7.1.1-noicon-arm64-v8a.apk) | 19-09-2026 |
@@ -17,7 +17,6 @@ Auto-updated weekly via GitHub Actions.
 | **JTV-GO Server** | v1.2.0 | [Download APK](https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.2.0/JTV-GO-Server-v1.2.0-release.apk) | 19-09-2026 |
 | **Seal** | v1.13.1 | [Download APK](https://github.com/JunkFood02/Seal/releases/download/v1.13.1/Seal-1.13.1-universal-release.apk) | 19-09-2026 |
 | **Local Send** | v1.18.2 | [Download APK](https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-android-google-play.apk) | 19-09-2026 |
-| **GBoardWu ARM64** | latest | [Download APK](https://github.com/yashrajrocxx/Mophe-AutoBuilds/releases/download/latest/gboard-arm64-v8a-jasonwu-v18.0.3.954559732-release-arm64-v8a.apk) | 19-09-2026 |
 
 ## 🔗 Sources
 - https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root
