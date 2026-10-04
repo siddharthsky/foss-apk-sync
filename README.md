@@ -13,7 +13,7 @@ Auto-updated weekly via GitHub Actions.
 | **YouTube Morphe** | all | [Download APK](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-morphe.apk) | 19-09-2026 |
 | **MicroG-RE** | 7.1.1 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/7.1.1/microg-7.1.1-noicon.apk) | 19-09-2026 |
 | **MicroG-RE ARM64** | 7.1.1 | [Download APK](https://github.com/MorpheApp/MicroG-RE/releases/download/7.1.1/microg-7.1.1-noicon-arm64-v8a.apk) | 19-09-2026 |
-| **AerialViews** | 1.8.4 | [Download APK](https://github.com/theothernt/AerialViews/releases/download/1.8.4/aerial-views-1.8.4.apk) | 19-09-2026 |
+| **AerialViews** | 1.8.5 | [Download APK](https://github.com/theothernt/AerialViews/releases/download/1.8.5/aerial-views-1.8.5.apk) | 04-10-2026 |
 | **JTV-GO Server** | v1.2.0 | [Download APK](https://github.com/JioTV-Go/jiotv_go_app/releases/download/v1.2.0/JTV-GO-Server-v1.2.0-release.apk) | 19-09-2026 |
 | **Seal** | v1.13.1 | [Download APK](https://github.com/JunkFood02/Seal/releases/download/v1.13.1/Seal-1.13.1-universal-release.apk) | 19-09-2026 |
 | **Local Send** | v1.18.2 | [Download APK](https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-android-google-play.apk) | 19-09-2026 |
