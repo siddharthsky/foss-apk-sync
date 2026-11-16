@@ -4,8 +4,8 @@
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "pkg": "com.metrolist.music",
   "kind": "phone",
-  "version": "v13.7.0",
-  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.7.0/Metrolist-with-Google-Cast.apk",
+  "version": "v14.0.0",
+  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v14.0.0/Metrolist-with-Google-Cast.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
 }
 ,
@@ -14,8 +14,8 @@
   "icon": "https://i.ibb.co/PZmYBVJ4/metro.png",
   "pkg": "com.metrolist.music",
   "kind": "phone",
-  "version": "v13.7.0",
-  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v13.7.0/Metrolist.apk",
+  "version": "v14.0.0",
+  "url": "https://github.com/MetrolistGroup/Metrolist/releases/download/v14.0.0/Metrolist.apk",
   "source": "https://github.com/MetrolistGroup/Metrolist"
 }
 ,
@@ -34,8 +34,8 @@
   "icon": "https://i.ibb.co/zTM9ydzn/mixp.png",
   "pkg": "com.mixplorer",
   "kind": "phone",
-  "version": "v6.71.14_B26090320",
-  "url": "https://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.14_B26090320/MiXplorer_v6.71.14_B26090320.apk",
+  "version": "v6.71.15_B26090420",
+  "url": "https://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.15_B26090420/MiXplorer_v6.71.15-API29_B26090430.apk\nhttps://github.com/driftywinds/mixplorer-releases/releases/download/v6.71.15_B26090420/MiXplorer_v6.71.15_B26090420.apk",
   "source": "https://github.com/driftywinds/mixplorer-releases"
 }
 ,
@@ -54,8 +54,8 @@
   "icon": "https://i.ibb.co/KcKgWxy5/stubebeta.png",
   "pkg": "org.smarttube.beta",
   "kind": "tv",
-  "version": "32.74",
-  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.74/SmartTube_beta_32.74_universal.apk",
+  "version": "32.75",
+  "url": "https://github.com/yuliskov/SmartTube/releases/download/32.75/SmartTube_beta_32.75_universal.apk",
   "source": "https://github.com/yuliskov/SmartTube"
 }
 ,
@@ -74,8 +74,8 @@
   "icon": "https://i.ibb.co/JFMQSZPJ/Micro-Gre.png",
   "pkg": "app.revanced.android.gms",
   "kind": "phone",
-  "version": "7.3.0",
-  "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/7.3.0/microg-7.3.0-noicon.apk",
+  "version": "7.3.1",
+  "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/7.3.1/microg-7.3.1-noicon.apk",
   "source": "https://github.com/MorpheApp/MicroG-RE"
 }
 ,
@@ -84,8 +84,8 @@
   "icon": "https://i.ibb.co/JFMQSZPJ/Micro-Gre.png",
   "pkg": "app.revanced.android.gms",
   "kind": "phone",
-  "version": "7.3.0",
-  "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/7.3.0/microg-7.3.0-noicon-arm64-v8a.apk",
+  "version": "7.3.1",
+  "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/7.3.1/microg-7.3.1-noicon-arm64-v8a.apk",
   "source": "https://github.com/MorpheApp/MicroG-RE"
 }
 ,
